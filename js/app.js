@@ -19,7 +19,7 @@ const copyArea = document.querySelector("#copyArea");
 const areaCount = document.querySelector("#areaCount");
 const areaReadout = document.querySelector("#areaReadout");
 const areaPointList = document.querySelector("#areaPointList");
-const areaHotspots = Array.from({ length: 10 }, (_, i) => document.querySelector(`#areaHotspot${i + 1}`));
+const areaHotspots = Array.from({ length: 20 }, (_, i) => document.querySelector(`#areaHotspot${i + 1}`));
 
 const lockedPoints = {
   "endocrine": {
@@ -57,6 +57,18 @@ const lockedPoints = {
     "name": "Brain",
     "position": "-0.0004555845272072312m -0.006189061561736917m -0.007451785428202469m",
     "normal": "0.2462127670513261m 0.8359014109897481m 0.4905589714257376m"
+  },
+  "pointZero": {
+    "id": "pointZero",
+    "name": "Point Zero",
+    "position": "0.0009401790682763943m 0.0008750055831536511m 0.000637664917589334m",
+    "normal": "-0.1584774074429128m 0.31569692511363845m -0.9355321281516563m"
+  },
+  "mouth": {
+    "id": "mouth",
+    "name": "Mouth",
+    "position": "0.0056609512248223665m -0.0023364361927256175m 0.002496305804476434m",
+    "normal": "0.5430653084929933m -0.6719043572210315m -0.503611562078158m"
   }
 };
 const lockedAreas = {
@@ -282,7 +294,7 @@ function requestAreaOverlayUpdate() {
 }
 
 viewer.addEventListener("load", () => {
-  modelStatus.textContent = "Ear 1 ready · front view fixed · 6 locked points + 2 locked areas";
+  modelStatus.textContent = "Ear 1 ready · front view fixed · 8 locked points + 2 locked areas";
   Object.values(lockedPoints).forEach((point) => {
     viewer.updateHotspot({ name: `hotspot-${point.id}`, position: point.position, normal: point.normal });
     viewer.updateHotspot({ name: `hotspot-${point.id}-label`, position: point.position, normal: point.normal });
@@ -348,7 +360,7 @@ viewer.addEventListener("click", (event) => {
   const normal = hit.normal.toString();
 
   if (areaMode) {
-    if (areaPoints.length >= 10) return;
+    if (areaPoints.length >= 20) return;
     areaPoints.push({ position, normal });
     renderAreaPoints();
     return;

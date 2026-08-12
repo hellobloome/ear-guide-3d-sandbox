@@ -55,3 +55,9 @@ Bloomé Guide Package 31.2 remains untouched.
 - Ear Apex is now loaded as a locked area with 10 boundary points.
 - Occiput boundary markers are hidden, while the Occiput patch stays visible.
 - Both area patches remain visible while rotating the ear.
+
+
+## Beta 1B.8 update
+- Area calibration mode now supports up to 20 boundary points.
+- Point Zero and Mouth are now loaded as locked points.
+- Occiput and Ear Apex remain locked translucent area patches.

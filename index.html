@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#f8f4ef">
-  <title>Bloomé 3D Ear Beta 1B.7 — Brain + Ear Apex Area</title>
+  <title>Bloomé 3D Ear Beta 1B.8 — 20 Boundary Areas + Point Zero + Mouth</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -14,7 +14,7 @@
 <body>
   <header class="topbar">
     <a class="brand" href="./">Bloomé</a>
-    <span class="beta-chip">3D Ear Beta 1B.7</span>
+    <span class="beta-chip">3D Ear Beta 1B.8</span>
   </header>
 
   <main class="shell">
@@ -22,7 +22,7 @@
       <p class="eyebrow">Standalone 3D validation</p>
       <h1>Six points plus two refined areas.</h1>
       <p>
-        This beta keeps the corrected front-facing orientation, removes the Occiput boundary markers, adds the Brain point, and adds Ear Apex as a second locked area using 10 approved boundary points. Both areas are now shown as translucent highlighted patches while point placement mode and area calibration mode remain available for future calibration work.
+        This beta keeps the corrected front-facing orientation, removes the Occiput boundary markers, adds Point Zero and Mouth as locked points, and increases the area calibration tool to support up to 20 boundary points for more precise area highlighting. Both locked areas remain visible as translucent highlighted patches while point placement mode and area calibration mode remain available for future calibration work.
       </p>
     </section>
 
@@ -39,7 +39,7 @@
         <model-viewer
           id="earViewer"
           src="./models/ear-1.glb"
-          alt="Interactive 3D model of the external ear showing six locked Bloomé beta points and the locked Occiput and Ear Apex areas"
+          alt="Interactive 3D model of the external ear showing eight locked Bloomé beta points and the locked Occiput and Ear Apex areas"
           camera-controls
           touch-action="pan-y"
           tone-mapping="neutral"
@@ -429,14 +429,13 @@
             aria-label="Temporary point calibration marker">
             <span></span>
           </button>
-
           <button
             id="areaHotspot1"
             class="area-hotspot"
             slot="hotspot-area-1"
             data-position="0m 0m 0m"
             data-normal="0m 0m 1m"
-            aria-label="Occiput area boundary point 1">
+            aria-label="Area boundary point 1">
             <span>1</span>
           </button>
 
@@ -446,7 +445,7 @@
             slot="hotspot-area-2"
             data-position="0m 0m 0m"
             data-normal="0m 0m 1m"
-            aria-label="Occiput area boundary point 2">
+            aria-label="Area boundary point 2">
             <span>2</span>
           </button>
 
@@ -456,7 +455,7 @@
             slot="hotspot-area-3"
             data-position="0m 0m 0m"
             data-normal="0m 0m 1m"
-            aria-label="Occiput area boundary point 3">
+            aria-label="Area boundary point 3">
             <span>3</span>
           </button>
 
@@ -466,7 +465,7 @@
             slot="hotspot-area-4"
             data-position="0m 0m 0m"
             data-normal="0m 0m 1m"
-            aria-label="Occiput area boundary point 4">
+            aria-label="Area boundary point 4">
             <span>4</span>
           </button>
 
@@ -476,7 +475,7 @@
             slot="hotspot-area-5"
             data-position="0m 0m 0m"
             data-normal="0m 0m 1m"
-            aria-label="Occiput area boundary point 5">
+            aria-label="Area boundary point 5">
             <span>5</span>
           </button>
 
@@ -486,7 +485,7 @@
             slot="hotspot-area-6"
             data-position="0m 0m 0m"
             data-normal="0m 0m 1m"
-            aria-label="Occiput area boundary point 6">
+            aria-label="Area boundary point 6">
             <span>6</span>
           </button>
 
@@ -496,7 +495,7 @@
             slot="hotspot-area-7"
             data-position="0m 0m 0m"
             data-normal="0m 0m 1m"
-            aria-label="Occiput area boundary point 7">
+            aria-label="Area boundary point 7">
             <span>7</span>
           </button>
 
@@ -506,7 +505,7 @@
             slot="hotspot-area-8"
             data-position="0m 0m 0m"
             data-normal="0m 0m 1m"
-            aria-label="Occiput area boundary point 8">
+            aria-label="Area boundary point 8">
             <span>8</span>
           </button>
 
@@ -516,7 +515,7 @@
             slot="hotspot-area-9"
             data-position="0m 0m 0m"
             data-normal="0m 0m 1m"
-            aria-label="Occiput area boundary point 9">
+            aria-label="Area boundary point 9">
             <span>9</span>
           </button>
 
@@ -526,9 +525,110 @@
             slot="hotspot-area-10"
             data-position="0m 0m 0m"
             data-normal="0m 0m 1m"
-            aria-label="Occiput area boundary point 10">
+            aria-label="Area boundary point 10">
             <span>10</span>
           </button>
+
+          <button
+            id="areaHotspot11"
+            class="area-hotspot"
+            slot="hotspot-area-11"
+            data-position="0m 0m 0m"
+            data-normal="0m 0m 1m"
+            aria-label="Area boundary point 11">
+            <span>11</span>
+          </button>
+
+          <button
+            id="areaHotspot12"
+            class="area-hotspot"
+            slot="hotspot-area-12"
+            data-position="0m 0m 0m"
+            data-normal="0m 0m 1m"
+            aria-label="Area boundary point 12">
+            <span>12</span>
+          </button>
+
+          <button
+            id="areaHotspot13"
+            class="area-hotspot"
+            slot="hotspot-area-13"
+            data-position="0m 0m 0m"
+            data-normal="0m 0m 1m"
+            aria-label="Area boundary point 13">
+            <span>13</span>
+          </button>
+
+          <button
+            id="areaHotspot14"
+            class="area-hotspot"
+            slot="hotspot-area-14"
+            data-position="0m 0m 0m"
+            data-normal="0m 0m 1m"
+            aria-label="Area boundary point 14">
+            <span>14</span>
+          </button>
+
+          <button
+            id="areaHotspot15"
+            class="area-hotspot"
+            slot="hotspot-area-15"
+            data-position="0m 0m 0m"
+            data-normal="0m 0m 1m"
+            aria-label="Area boundary point 15">
+            <span>15</span>
+          </button>
+
+          <button
+            id="areaHotspot16"
+            class="area-hotspot"
+            slot="hotspot-area-16"
+            data-position="0m 0m 0m"
+            data-normal="0m 0m 1m"
+            aria-label="Area boundary point 16">
+            <span>16</span>
+          </button>
+
+          <button
+            id="areaHotspot17"
+            class="area-hotspot"
+            slot="hotspot-area-17"
+            data-position="0m 0m 0m"
+            data-normal="0m 0m 1m"
+            aria-label="Area boundary point 17">
+            <span>17</span>
+          </button>
+
+          <button
+            id="areaHotspot18"
+            class="area-hotspot"
+            slot="hotspot-area-18"
+            data-position="0m 0m 0m"
+            data-normal="0m 0m 1m"
+            aria-label="Area boundary point 18">
+            <span>18</span>
+          </button>
+
+          <button
+            id="areaHotspot19"
+            class="area-hotspot"
+            slot="hotspot-area-19"
+            data-position="0m 0m 0m"
+            data-normal="0m 0m 1m"
+            aria-label="Area boundary point 19">
+            <span>19</span>
+          </button>
+
+          <button
+            id="areaHotspot20"
+            class="area-hotspot"
+            slot="hotspot-area-20"
+            data-position="0m 0m 0m"
+            data-normal="0m 0m 1m"
+            aria-label="Area boundary point 20">
+            <span>20</span>
+          </button>
+
 
           <div slot="progress-bar" class="progress">
             <div class="progress-bar"></div>
@@ -552,9 +652,9 @@
     <section class="test-grid">
       <article class="test-card">
         <p class="eyebrow">Locked 3D library</p>
-        <h2>Six points plus two refined areas are now fixed</h2>
+        <h2>Eight points plus two refined areas are now fixed</h2>
         <p>
-          The six locked markers stay attached to their saved 3D surface positions while you rotate and zoom the ear. Occiput and Ear Apex are both shown as translucent patches built from approved boundary points. Tap a point or area name below to center the camera target for closer inspection.
+          The eight locked markers stay attached to their saved 3D surface positions while you rotate and zoom the ear. Occiput and Ear Apex are both shown as translucent patches built from approved boundary points. Tap a point or area name below to center the camera target for closer inspection.
         </p>
         <div class="point-chip-list">
           <button class="point-chip" data-focus-point="endocrine">Endocrine</button>
@@ -563,6 +663,8 @@
           <button class="point-chip" data-focus-point="thalamus">Thalamus</button>
           <button class="point-chip" data-focus-point="adrenal">Adrenal</button>
           <button class="point-chip" data-focus-point="brain">Brain</button>
+          <button class="point-chip" data-focus-point="pointZero">Point Zero</button>
+          <button class="point-chip" data-focus-point="mouth">Mouth</button>
           <button class="point-chip point-chip-area" data-focus-area="occiput">Occiput area</button>
           <button class="point-chip point-chip-area" data-focus-area="earApex">Ear Apex area</button>
         </div>
@@ -573,9 +675,9 @@
 
       <article class="test-card placement-card">
         <p class="eyebrow">3D calibration tool</p>
-        <h2>Place the next point without moving the locked six</h2>
+        <h2>Place the next point without moving the locked eight</h2>
         <p>
-          All six point locations remain locked. Turn on point placement mode and tap Ear 1
+          All eight point locations remain locked. Turn on point placement mode and tap Ear 1
           to create a separate temporary marker for another point without altering the locked library.
         </p>
 
@@ -643,6 +745,22 @@
                 Copy Brain data
               </button>
             </section>
+            <section class="locked-point-row">
+              <strong>Point Zero</strong>
+              <div><span>Position</span><code>0.0009401790682763943m 0.0008750055831536511m 0.000637664917589334m</code></div>
+              <div><span>Normal</span><code>-0.1584774074429128m 0.31569692511363845m -0.9355321281516563m</code></div>
+              <button class="text-button copy-locked-point" data-copy-point="pointZero">
+                Copy Point Zero data
+              </button>
+            </section>
+            <section class="locked-point-row">
+              <strong>Mouth</strong>
+              <div><span>Position</span><code>0.0056609512248223665m -0.0023364361927256175m 0.002496305804476434m</code></div>
+              <div><span>Normal</span><code>0.5430653084929933m -0.6719043572210315m -0.503611562078158m</code></div>
+              <button class="text-button copy-locked-point" data-copy-point="mouth">
+                Copy Mouth data
+              </button>
+            </section>
 
           </div>
         </details>
@@ -654,13 +772,13 @@
         <p class="eyebrow">Locked areas + calibration</p>
         <h2>Occiput and Ear Apex are now locked as areas</h2>
         <p>
-          Occiput now stays visible as a clean translucent patch without boundary markers, and Ear Apex is now added as a second locked area using 10 approved boundary points. You can still use area mode below if you want to refine either region or calibrate another area later.
+          Occiput now stays visible as a clean translucent patch without boundary markers, and Ear Apex is now added as a second locked area using 10 approved boundary points. You can still use area mode below if you want to refine either region or calibrate another area later, and now you can place up to 20 boundary points for finer tracing.
         </p>
         <div class="area-guidance">
           <span>2 locked areas</span>
           <span>Occiput markers hidden</span>
           <span>Ear Apex patch added</span>
-          <span>Areas remain visible while rotating</span>
+          <span>Area mode now supports up to 20 points</span>
           <span>Recalibration mode still available</span>
         </div>
       </div>
@@ -698,7 +816,7 @@
 
         <div class="area-count">
           <strong id="areaCount">0</strong>
-          <span>boundary points</span>
+          <span>boundary points (max 20)</span>
         </div>
 
         <div id="areaReadout" class="area-readout" hidden>
