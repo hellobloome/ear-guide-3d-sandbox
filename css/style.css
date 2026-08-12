@@ -32,7 +32,7 @@ button{font:inherit}
   background:rgba(255,255,255,.6);font-size:.7rem;font-weight:600;color:var(--burgundy)
 }
 .shell{width:min(1160px,calc(100% - 32px));margin:auto;padding:64px 0 80px}
-.intro{max-width:760px;margin:0 auto 32px;text-align:center}
+.intro{max-width:760px;margin:0 auto 24px;text-align:center}
 .eyebrow{
   margin:0 0 10px;color:var(--burgundy);font-size:.68rem;font-weight:700;
   letter-spacing:.13em;text-transform:uppercase
@@ -41,6 +41,10 @@ h1,h2{font-family:"Cormorant Garamond",serif;color:var(--burgundy);font-weight:6
 h1{font-size:clamp(2.5rem,6vw,4.7rem);line-height:.96;margin:0 0 18px}
 h2{font-size:2rem;margin:0 0 10px}
 p{line-height:1.7;color:var(--muted)}
+.orientation-note{
+  margin:0 auto 18px;padding:14px 16px;max-width:840px;border:1px solid rgba(90,22,17,.12);
+  border-radius:16px;background:var(--rose);color:#68403c;font-size:.78rem;line-height:1.6
+}
 .viewer-card,.test-card{
   border:1px solid var(--border);background:rgba(255,253,251,.91);
   box-shadow:var(--shadow);border-radius:28px

@@ -15,8 +15,8 @@ let pointData = null;
 
 const views = {
   front: {orbit:"0deg 75deg 105%", target:"0m 0m 0m", fov:"32deg"},
-  lower: {orbit:"14deg 78deg 64%", target:"0m -0.009m 0m", fov:"28deg"},
-  side: {orbit:"68deg 78deg 105%", target:"0m 0m 0m", fov:"32deg"}
+  lower: {orbit:"-14deg 78deg 64%", target:"0m -0.009m 0m", fov:"28deg"},
+  side: {orbit:"-68deg 78deg 105%", target:"0m 0m 0m", fov:"32deg"}
 };
 
 function applyView(view){

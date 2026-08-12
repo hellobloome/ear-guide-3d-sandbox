@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#f8f4ef">
-  <title>Bloomé 3D Ear Beta 1A</title>
+  <title>Bloomé 3D Ear Beta 1A.1</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -14,17 +14,23 @@
 <body>
   <header class="topbar">
     <a class="brand" href="./">Bloomé</a>
-    <span class="beta-chip">3D Ear Beta 1A</span>
+    <span class="beta-chip">3D Ear Beta 1A.1</span>
   </header>
 
   <main class="shell">
     <section class="intro">
-      <p class="eyebrow">Standalone model sandbox</p>
+      <p class="eyebrow">Orientation-corrected standalone sandbox</p>
       <h1>Choose the ear with the clearest anatomy.</h1>
       <p>
-        This experiment is separate from Bloomé Guide v1.0. Rotate and inspect all four
-        ear meshes before we choose one for the Endocrine 3D point.
+        All four ear meshes have now been mirrored at geometry level to match the ear
+        orientation used in the locked Bloomé Guide v1.0 2D map.
       </p>
+    </section>
+
+    <section class="orientation-note">
+      <strong>Orientation lock:</strong>
+      Use this Beta 1A.1 package, not the earlier Beta 1A package, for all future
+      3D coordinate and Endocrine placement work.
     </section>
 
     <section class="viewer-card">
@@ -42,7 +48,7 @@
         <model-viewer
           id="earViewer"
           src="./models/ear-1.glb"
-          alt="Interactive 3D model of an external ear"
+          alt="Interactive 3D ear model matched to the orientation of the Bloomé 2D ear map"
           camera-controls
           disable-tap
           touch-action="pan-y"
@@ -90,10 +96,10 @@
     <section class="test-grid">
       <article class="test-card">
         <p class="eyebrow">Anatomy check</p>
-        <h2>Before placing Endocrine</h2>
+        <h2>Pick the best mesh first</h2>
         <p>
-          Rotate each ear and inspect the tragus, antitragus, intertragic notch and
-          cavum conchae. Pick the mesh where these structures are easiest to distinguish.
+          Rotate each ear and compare the tragus, antitragus, intertragic notch and
+          cavum conchae. We will place Endocrine only after one mesh is selected.
         </p>
         <div class="anatomy-list">
           <span>Tragus</span>
@@ -105,10 +111,10 @@
 
       <article class="test-card placement-card">
         <p class="eyebrow">Test marker</p>
-        <h2>Try a 3D surface point</h2>
+        <h2>Test the 3D surface</h2>
         <p>
-          Turn on placement mode, then tap the ear. This is only a technical placement
-          test. It is not yet the approved Endocrine location.
+          Turn on placement mode, then tap the ear. The marker is only for testing
+          geometry and surface coordinates. It is not the approved Endocrine point.
         </p>
 
         <button id="placementToggle" class="primary-button" aria-pressed="false">
@@ -125,7 +131,8 @@
 
     <aside class="notice">
       <strong>Beta rule:</strong>
-      Package 31.2 remains untouched. Nothing selected here changes the approved 2D map.
+      Bloomé Guide Package 31.2 remains untouched. This sandbox has its own independent
+      3D coordinate space.
     </aside>
   </main>
 

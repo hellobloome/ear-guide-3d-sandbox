@@ -1,40 +1,55 @@
 {
+  "beta": "1A.1",
+  "purpose": "Mirror 3D ear geometry to match Bloom\u00e9 Guide Package 31.2 ear orientation",
   "source_file": "ear_set.glb",
   "source_bytes": 766308,
+  "source_sha256": "58c0714e567a2b0e765a28ec1f849053fb7d94161b6e90e228101ac2a037f53e",
   "embedded_metadata": {
     "author": "alexlashko (https://sketchfab.com/alexlashko)",
     "license": "CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)",
     "source": "https://sketchfab.com/3d-models/ear-set-02a919413aa84e9ea47622a2c8e45864",
     "title": "Ear Set"
   },
+  "transform": {
+    "web_reorientation": "(-source_Z, source_Y, source_X)",
+    "orientation_match": "mirror web X axis",
+    "face_winding": "reversed after reflection",
+    "normals": "recalculated/fixed after reflection",
+    "target_height_m": 0.065
+  },
+  "warning": "Do not reuse any 3D hotspot coordinates created in Beta 1A.",
   "extracted_models": [
     {
       "ear": 1,
       "triangles": 6400,
       "vertices": 3496,
       "bytes": 147948,
-      "sha256": "e4e59424671a8005d0096af2290568f1c6d09ebfde1669454049c9fb80668f93"
+      "sha256": "c727bf41c51e363410274c8b83dfc0a4afe0595f67e02c9655197f271aeeaa20",
+      "orientation": "mirrored horizontally to match Bloom\u00e9 Guide 2D ear orientation"
     },
     {
       "ear": 2,
       "triangles": 6400,
       "vertices": 3496,
       "bytes": 147948,
-      "sha256": "5432aa70ad71497f2f75adf57cda2caa74624dac00df85605267154e389371bd"
+      "sha256": "a61095b9ca023b04d38875e68ecefd1bba9192127aed8d7c676ca459569fe248",
+      "orientation": "mirrored horizontally to match Bloom\u00e9 Guide 2D ear orientation"
     },
     {
       "ear": 3,
       "triangles": 6400,
       "vertices": 3496,
       "bytes": 147948,
-      "sha256": "e5e87507b349b0587010674c2392b91d04360d863ee6b3e4da9cd46a7ebed2f9"
+      "sha256": "0f8248d3c52220e44c7296a5fe6ef491614721ac924ee899e374b5fb2dfab586",
+      "orientation": "mirrored horizontally to match Bloom\u00e9 Guide 2D ear orientation"
     },
     {
       "ear": 4,
       "triangles": 6400,
       "vertices": 3496,
       "bytes": 147948,
-      "sha256": "8307cbdecf7e990a8f4f65feb121a91fb34a0f34a5f6fd43e5b63ff405d4c67a"
+      "sha256": "d7e5c41c3f5d2f9054f91d33013ffbbd610fcd4cf6eea5ea6db0dba9c597fd25",
+      "orientation": "mirrored horizontally to match Bloom\u00e9 Guide 2D ear orientation"
     }
   ]
 }
