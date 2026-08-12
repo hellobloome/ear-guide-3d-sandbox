@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#f8f4ef">
-  <title>Bloomé 3D Ear Beta 1A.1</title>
+  <title>Bloomé 3D Ear Beta 1B.1 — Endocrine + Placement Mode</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -14,43 +14,35 @@
 <body>
   <header class="topbar">
     <a class="brand" href="./">Bloomé</a>
-    <span class="beta-chip">3D Ear Beta 1A.1</span>
+    <span class="beta-chip">3D Ear Beta 1B.1</span>
   </header>
 
   <main class="shell">
     <section class="intro">
-      <p class="eyebrow">Orientation-corrected standalone sandbox</p>
-      <h1>Choose the ear with the clearest anatomy.</h1>
+      <p class="eyebrow">Standalone 3D validation</p>
+      <h1>Endocrine point locked on Ear 1.</h1>
       <p>
-        All four ear meshes have now been mirrored at geometry level to match the ear
-        orientation used in the locked Bloomé Guide v1.0 2D map.
+        This beta uses only the approved Ear 1 model and a fixed test marker for the
+        Endocrine point. The goal is to validate whether the intertragic notch / lower
+        concha area reads more clearly in 3D than on the main 2D map.
       </p>
-    </section>
-
-    <section class="orientation-note">
-      <strong>Orientation lock:</strong>
-      Use this Beta 1A.1 package, not the earlier Beta 1A package, for all future
-      3D coordinate and Endocrine placement work.
     </section>
 
     <section class="viewer-card">
       <div class="viewer-toolbar">
-        <div class="ear-picker" aria-label="Choose ear model">
-          <button class="ear-choice active" data-ear="1">Ear 1</button>
-          <button class="ear-choice" data-ear="2">Ear 2</button>
-          <button class="ear-choice" data-ear="3">Ear 3</button>
-          <button class="ear-choice" data-ear="4">Ear 4</button>
+        <div>
+          <p class="eyebrow no-margin">Approved mesh</p>
+          <strong class="toolbar-title">Ear 1 only</strong>
         </div>
-        <span id="modelStatus" class="status">Loading Ear 1…</span>
+        <span id="modelStatus" class="status">Loading Endocrine model…</span>
       </div>
 
       <div class="viewer-wrap">
         <model-viewer
           id="earViewer"
           src="./models/ear-1.glb"
-          alt="Interactive 3D ear model matched to the orientation of the Bloomé 2D ear map"
+          alt="Interactive 3D model of the external ear showing the Endocrine point"
           camera-controls
-          disable-tap
           touch-action="pan-y"
           tone-mapping="neutral"
           exposure="1.08"
@@ -65,14 +57,28 @@
           interaction-prompt="auto">
 
           <button
-            id="testHotspot"
-            class="hotspot"
-            slot="hotspot-test"
-            data-position="0m 0m 0m"
-            data-normal="0m 0m 1m"
-            aria-label="Test point marker">
+            id="endocrineHotspot"
+            class="hotspot is-active"
+            slot="hotspot-endocrine"
+            data-position="0.009558152093243306m -0.013357561336935955m -0.00036221876286193777m"
+            data-normal="0.4400594620926465m 0.8495934728511428m -0.29075522473631493m"
+            aria-label="Endocrine point marker">
             <span></span>
           </button>
+
+          <button
+            id="calibrationHotspot"
+            class="hotspot calibration-hotspot"
+            slot="hotspot-calibration"
+            data-position="0m 0m 0m"
+            data-normal="0m 0m 1m"
+            aria-label="Temporary calibration marker">
+            <span></span>
+          </button>
+
+          <div class="label-pill" slot="hotspot-endocrine-label" data-position="0.009558152093243306m -0.013357561336935955m -0.00036221876286193777m" data-normal="0.4400594620926465m 0.8495934728511428m -0.29075522473631493m">
+            Endocrine
+          </div>
 
           <div slot="progress-bar" class="progress">
             <div class="progress-bar"></div>
@@ -95,44 +101,55 @@
 
     <section class="test-grid">
       <article class="test-card">
-        <p class="eyebrow">Anatomy check</p>
-        <h2>Pick the best mesh first</h2>
+        <p class="eyebrow">Point summary</p>
+        <h2>Why this point is in 3D</h2>
         <p>
-          Rotate each ear and compare the tragus, antitragus, intertragic notch and
-          cavum conchae. We will place Endocrine only after one mesh is selected.
+          Endocrine sits in a recessed area around the intertragic notch / floor of the
+          cavum conchae, which can be harder to communicate on a flat ear illustration.
+          This beta checks whether 3D gives a more intuitive sense of depth.
         </p>
         <div class="anatomy-list">
-          <span>Tragus</span>
-          <span>Antitragus</span>
           <span>Intertragic notch</span>
-          <span>Cavum conchae</span>
+          <span>Lower concha</span>
+          <span>Depth-sensitive point</span>
         </div>
       </article>
 
       <article class="test-card placement-card">
-        <p class="eyebrow">Test marker</p>
-        <h2>Test the 3D surface</h2>
+        <p class="eyebrow">3D calibration tool</p>
+        <h2>Place the next point without losing Endocrine</h2>
         <p>
-          Turn on placement mode, then tap the ear. The marker is only for testing
-          geometry and surface coordinates. It is not the approved Endocrine point.
+          Endocrine remains locked. Turn on placement mode and tap anywhere on Ear 1
+          to create a separate temporary marker for the next point we want to test.
         </p>
 
         <button id="placementToggle" class="primary-button" aria-pressed="false">
           Turn on placement mode
         </button>
+        <button id="clearCalibration" class="secondary-button" disabled>
+          Clear temporary marker
+        </button>
 
-        <div id="pointReadout" class="point-readout" hidden>
-          <div><span>Position</span><code id="positionValue"></code></div>
-          <div><span>Normal</span><code id="normalValue"></code></div>
-          <button id="copyPoint" class="text-button">Copy point data</button>
+        <div id="calibrationReadout" class="point-readout calibration-readout" hidden>
+          <div><span>Position</span><code id="calibrationPosition"></code></div>
+          <div><span>Normal</span><code id="calibrationNormal"></code></div>
+          <button id="copyCalibration" class="text-button">Copy temporary point data</button>
         </div>
+
+        <details class="locked-details">
+          <summary>Show locked Endocrine coordinates</summary>
+          <div class="point-readout locked-readout">
+            <div><span>Position</span><code>0.009558152093243306m -0.013357561336935955m -0.00036221876286193777m</code></div>
+            <div><span>Normal</span><code>0.4400594620926465m 0.8495934728511428m -0.29075522473631493m</code></div>
+            <button id="copyPoint" class="text-button">Copy Endocrine data</button>
+          </div>
+        </details>
       </article>
     </section>
 
     <aside class="notice">
       <strong>Beta rule:</strong>
-      Bloomé Guide Package 31.2 remains untouched. This sandbox has its own independent
-      3D coordinate space.
+      This is a standalone 3D experiment. Package 31.2 and the approved 2D map remain unchanged.
     </aside>
   </main>
 
