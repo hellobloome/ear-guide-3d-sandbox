@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#f8f4ef">
-  <title>Bloomé 3D Ear Beta 1B.3 — Four Locked Points</title>
+  <title>Bloomé 3D Ear Beta 1B.4 — Adrenal + Area Calibration</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -14,17 +14,17 @@
 <body>
   <header class="topbar">
     <a class="brand" href="./">Bloomé</a>
-    <span class="beta-chip">3D Ear Beta 1B.3</span>
+    <span class="beta-chip">3D Ear Beta 1B.4</span>
   </header>
 
   <main class="shell">
     <section class="intro">
       <p class="eyebrow">Standalone 3D validation</p>
-      <h1>Four 3D points locked on Ear 1.</h1>
+      <h1>Five points locked, with area calibration ready.</h1>
       <p>
-        This beta keeps the selected Ear 1 model and now locks Endocrine, Sympathetic,
-        Subcortex and Thalamus as separate 3D surface points. Free placement mode remains
-        available so we can calibrate additional points without moving the locked set.
+        This beta locks Endocrine, Sympathetic, Subcortex, Thalamus and Adrenal on Ear 1.
+        Point placement remains available, and a separate multi-tap area calibration mode
+        is now included so we can trace Occiput as a region instead of forcing it into one dot.
       </p>
     </section>
 
@@ -34,14 +34,14 @@
           <p class="eyebrow no-margin">Approved mesh</p>
           <strong class="toolbar-title">Ear 1 only</strong>
         </div>
-        <span id="modelStatus" class="status">Loading four-point model…</span>
+        <span id="modelStatus" class="status">Loading five-point model…</span>
       </div>
 
       <div class="viewer-wrap">
         <model-viewer
           id="earViewer"
           src="./models/ear-1.glb"
-          alt="Interactive 3D model of the external ear showing four locked Bloomé beta points"
+          alt="Interactive 3D model of the external ear showing five locked Bloomé beta points and area calibration markers"
           camera-controls
           touch-action="pan-y"
           tone-mapping="neutral"
@@ -133,13 +133,132 @@
           </div>
 
           <button
+            id="adrenalHotspot"
+            class="hotspot locked-hotspot is-active"
+            slot="hotspot-adrenal"
+            data-position="0.013371002694813033m -0.005945040577114045m -0.004568411531561872m"
+            data-normal="0.18959473971573781m -0.0024429091862066257m -0.9818593926152713m"
+            aria-label="Adrenal point marker">
+            <span></span>
+          </button>
+
+          <div
+            id="adrenalLabel"
+            class="label-pill locked-label"
+            slot="hotspot-adrenal-label"
+            data-position="0.013371002694813033m -0.005945040577114045m -0.004568411531561872m"
+            data-normal="0.18959473971573781m -0.0024429091862066257m -0.9818593926152713m">
+            Adrenal
+          </div>
+
+          <button
             id="calibrationHotspot"
             class="hotspot calibration-hotspot"
             slot="hotspot-calibration"
             data-position="0m 0m 0m"
             data-normal="0m 0m 1m"
-            aria-label="Temporary calibration marker">
+            aria-label="Temporary point calibration marker">
             <span></span>
+          </button>
+
+          <button
+            id="areaHotspot1"
+            class="area-hotspot"
+            slot="hotspot-area-1"
+            data-position="0m 0m 0m"
+            data-normal="0m 0m 1m"
+            aria-label="Occiput area boundary point 1">
+            <span>1</span>
+          </button>
+
+          <button
+            id="areaHotspot2"
+            class="area-hotspot"
+            slot="hotspot-area-2"
+            data-position="0m 0m 0m"
+            data-normal="0m 0m 1m"
+            aria-label="Occiput area boundary point 2">
+            <span>2</span>
+          </button>
+
+          <button
+            id="areaHotspot3"
+            class="area-hotspot"
+            slot="hotspot-area-3"
+            data-position="0m 0m 0m"
+            data-normal="0m 0m 1m"
+            aria-label="Occiput area boundary point 3">
+            <span>3</span>
+          </button>
+
+          <button
+            id="areaHotspot4"
+            class="area-hotspot"
+            slot="hotspot-area-4"
+            data-position="0m 0m 0m"
+            data-normal="0m 0m 1m"
+            aria-label="Occiput area boundary point 4">
+            <span>4</span>
+          </button>
+
+          <button
+            id="areaHotspot5"
+            class="area-hotspot"
+            slot="hotspot-area-5"
+            data-position="0m 0m 0m"
+            data-normal="0m 0m 1m"
+            aria-label="Occiput area boundary point 5">
+            <span>5</span>
+          </button>
+
+          <button
+            id="areaHotspot6"
+            class="area-hotspot"
+            slot="hotspot-area-6"
+            data-position="0m 0m 0m"
+            data-normal="0m 0m 1m"
+            aria-label="Occiput area boundary point 6">
+            <span>6</span>
+          </button>
+
+          <button
+            id="areaHotspot7"
+            class="area-hotspot"
+            slot="hotspot-area-7"
+            data-position="0m 0m 0m"
+            data-normal="0m 0m 1m"
+            aria-label="Occiput area boundary point 7">
+            <span>7</span>
+          </button>
+
+          <button
+            id="areaHotspot8"
+            class="area-hotspot"
+            slot="hotspot-area-8"
+            data-position="0m 0m 0m"
+            data-normal="0m 0m 1m"
+            aria-label="Occiput area boundary point 8">
+            <span>8</span>
+          </button>
+
+          <button
+            id="areaHotspot9"
+            class="area-hotspot"
+            slot="hotspot-area-9"
+            data-position="0m 0m 0m"
+            data-normal="0m 0m 1m"
+            aria-label="Occiput area boundary point 9">
+            <span>9</span>
+          </button>
+
+          <button
+            id="areaHotspot10"
+            class="area-hotspot"
+            slot="hotspot-area-10"
+            data-position="0m 0m 0m"
+            data-normal="0m 0m 1m"
+            aria-label="Occiput area boundary point 10">
+            <span>10</span>
           </button>
 
           <div slot="progress-bar" class="progress">
@@ -164,9 +283,9 @@
     <section class="test-grid">
       <article class="test-card">
         <p class="eyebrow">Locked 3D library</p>
-        <h2>Four points are now fixed</h2>
+        <h2>Five points are now fixed</h2>
         <p>
-          These markers stay attached to their saved 3D surface positions while you
+          These five markers stay attached to their saved 3D surface positions while you
           rotate and zoom the ear. Tap a point name below to center the camera target
           near that point for closer inspection.
         </p>
@@ -175,6 +294,7 @@
           <button class="point-chip" data-focus-point="sympathetic">Sympathetic</button>
           <button class="point-chip" data-focus-point="subcortex">Subcortex</button>
           <button class="point-chip" data-focus-point="thalamus">Thalamus</button>
+          <button class="point-chip" data-focus-point="adrenal">Adrenal</button>
         </div>
         <button id="toggleLabels" class="secondary-button label-toggle" aria-pressed="false">
           Hide point labels
@@ -183,10 +303,10 @@
 
       <article class="test-card placement-card">
         <p class="eyebrow">3D calibration tool</p>
-        <h2>Place the next point without moving the locked four</h2>
+        <h2>Place the next point without moving the locked five</h2>
         <p>
-          All four points remain locked. Turn on placement mode and tap anywhere on Ear 1
-          to create a separate temporary marker for the next point we want to test.
+          All five point locations remain locked. Turn on point placement mode and tap Ear 1
+          to create a separate temporary marker for another point without altering the locked library.
         </p>
 
         <button id="placementToggle" class="primary-button" aria-pressed="false">
@@ -237,10 +357,60 @@
                 Copy Thalamus data
               </button>
             </section>
+            <section class="locked-point-row">
+              <strong>Adrenal</strong>
+              <div><span>Position</span><code>0.013371002694813033m -0.005945040577114045m -0.004568411531561872m</code></div>
+              <div><span>Normal</span><code>0.18959473971573781m -0.0024429091862066257m -0.9818593926152713m</code></div>
+              <button class="text-button copy-locked-point" data-copy-point="adrenal">
+                Copy Adrenal data
+              </button>
+            </section>
 
           </div>
         </details>
       </article>
+    </section>
+
+    <section class="area-calibration-card">
+      <div class="area-calibration-copy">
+        <p class="eyebrow">Area calibration</p>
+        <h2>Trace the Occiput region</h2>
+        <p>
+          Use this mode when a region is more useful than a single pinpoint. Rotate to
+          the antitragus, turn on area mode, then tap around the boundary of the Occiput
+          region in order. Aim for about 4–6 taps.
+        </p>
+        <div class="area-guidance">
+          <span>1. Rotate to the region</span>
+          <span>2. Turn on area mode</span>
+          <span>3. Tap boundary in order</span>
+          <span>4. Copy all area data</span>
+        </div>
+      </div>
+
+      <div class="area-controls">
+        <div class="area-button-row">
+          <button id="areaModeToggle" class="primary-button" aria-pressed="false">
+            Turn on Occiput area mode
+          </button>
+          <button id="undoAreaPoint" class="secondary-button" disabled>
+            Undo last
+          </button>
+          <button id="clearArea" class="secondary-button" disabled>
+            Clear area
+          </button>
+        </div>
+
+        <div class="area-count">
+          <strong id="areaCount">0</strong>
+          <span>boundary points</span>
+        </div>
+
+        <div id="areaReadout" class="area-readout" hidden>
+          <div id="areaPointList" class="area-point-list"></div>
+          <button id="copyArea" class="text-button">Copy Occiput area data</button>
+        </div>
+      </div>
     </section>
 
     <aside class="notice">

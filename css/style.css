@@ -230,3 +230,127 @@ code{font-size:.69rem;overflow-wrap:anywhere;color:var(--burgundy)}
     min-height:42px;
   }
 }
+
+
+/* ==========================================================
+   Beta 1B.4 — Adrenal lock + area calibration
+   ========================================================== */
+.area-hotspot{
+  width:26px;
+  height:26px;
+  padding:0;
+  border:2px solid #fff;
+  border-radius:50%;
+  background:#7d514a;
+  color:#fff;
+  box-shadow:0 0 0 5px rgba(125,81,74,.16),0 4px 14px rgba(0,0,0,.18);
+  opacity:0;
+  pointer-events:none;
+  font-size:.68rem;
+  font-weight:700;
+}
+.area-hotspot.is-active{opacity:1}
+.area-hotspot span{display:grid;place-items:center;width:100%;height:100%}
+
+.area-calibration-card{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+  gap:24px;
+  margin-top:20px;
+  padding:28px;
+  border:1px solid var(--border);
+  border-radius:28px;
+  background:rgba(255,253,251,.91);
+  box-shadow:var(--shadow);
+}
+.area-calibration-card h2{
+  margin-top:0;
+}
+.area-guidance{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+}
+.area-guidance span{
+  padding:8px 11px;
+  border-radius:999px;
+  background:var(--sage);
+  font-size:.72rem;
+}
+.area-controls{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+.area-button-row{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+}
+.area-button-row .secondary-button{
+  margin-left:0;
+}
+.area-count{
+  display:flex;
+  align-items:baseline;
+  gap:7px;
+  margin:18px 0 0;
+  color:var(--muted);
+}
+.area-count strong{
+  color:var(--burgundy);
+  font-family:"Cormorant Garamond",serif;
+  font-size:2.3rem;
+  font-weight:600;
+}
+.area-count span{
+  font-size:.74rem;
+}
+.area-readout{
+  margin-top:14px;
+  padding:15px;
+  border:1px solid var(--border);
+  border-radius:18px;
+  background:#f8f1ed;
+}
+.area-point-list{
+  display:grid;
+  gap:12px;
+}
+.area-data-row{
+  padding-bottom:12px;
+  border-bottom:1px solid var(--border);
+}
+.area-data-row:last-child{
+  border-bottom:0;
+}
+.area-data-row > strong{
+  display:block;
+  margin-bottom:8px;
+  color:var(--burgundy);
+}
+.area-data-row > div{
+  display:grid;
+  grid-template-columns:70px 1fr;
+  gap:8px;
+  margin-bottom:6px;
+}
+.area-data-row span{
+  font-size:.7rem;
+  color:var(--muted);
+}
+@media(max-width:760px){
+  .area-calibration-card{
+    grid-template-columns:1fr;
+    padding:22px;
+  }
+  .area-button-row{
+    display:grid;
+    grid-template-columns:1fr;
+  }
+  .area-button-row .primary-button,
+  .area-button-row .secondary-button{
+    width:100%;
+    margin:0;
+  }
+}
