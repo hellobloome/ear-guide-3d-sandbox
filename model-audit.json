@@ -1,0 +1,40 @@
+{
+  "source_file": "ear_set.glb",
+  "source_bytes": 766308,
+  "embedded_metadata": {
+    "author": "alexlashko (https://sketchfab.com/alexlashko)",
+    "license": "CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)",
+    "source": "https://sketchfab.com/3d-models/ear-set-02a919413aa84e9ea47622a2c8e45864",
+    "title": "Ear Set"
+  },
+  "extracted_models": [
+    {
+      "ear": 1,
+      "triangles": 6400,
+      "vertices": 3496,
+      "bytes": 147948,
+      "sha256": "e4e59424671a8005d0096af2290568f1c6d09ebfde1669454049c9fb80668f93"
+    },
+    {
+      "ear": 2,
+      "triangles": 6400,
+      "vertices": 3496,
+      "bytes": 147948,
+      "sha256": "5432aa70ad71497f2f75adf57cda2caa74624dac00df85605267154e389371bd"
+    },
+    {
+      "ear": 3,
+      "triangles": 6400,
+      "vertices": 3496,
+      "bytes": 147948,
+      "sha256": "e5e87507b349b0587010674c2392b91d04360d863ee6b3e4da9cd46a7ebed2f9"
+    },
+    {
+      "ear": 4,
+      "triangles": 6400,
+      "vertices": 3496,
+      "bytes": 147948,
+      "sha256": "8307cbdecf7e990a8f4f65feb121a91fb34a0f34a5f6fd43e5b63ff405d4c67a"
+    }
+  ]
+}

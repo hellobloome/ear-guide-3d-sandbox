@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f8f4ef">
+  <title>Bloomé 3D Ear Beta 1A</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/style.css">
+  <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.3.1/model-viewer.min.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="./">Bloomé</a>
+    <span class="beta-chip">3D Ear Beta 1A</span>
+  </header>
+
+  <main class="shell">
+    <section class="intro">
+      <p class="eyebrow">Standalone model sandbox</p>
+      <h1>Choose the ear with the clearest anatomy.</h1>
+      <p>
+        This experiment is separate from Bloomé Guide v1.0. Rotate and inspect all four
+        ear meshes before we choose one for the Endocrine 3D point.
+      </p>
+    </section>
+
+    <section class="viewer-card">
+      <div class="viewer-toolbar">
+        <div class="ear-picker" aria-label="Choose ear model">
+          <button class="ear-choice active" data-ear="1">Ear 1</button>
+          <button class="ear-choice" data-ear="2">Ear 2</button>
+          <button class="ear-choice" data-ear="3">Ear 3</button>
+          <button class="ear-choice" data-ear="4">Ear 4</button>
+        </div>
+        <span id="modelStatus" class="status">Loading Ear 1…</span>
+      </div>
+
+      <div class="viewer-wrap">
+        <model-viewer
+          id="earViewer"
+          src="./models/ear-1.glb"
+          alt="Interactive 3D model of an external ear"
+          camera-controls
+          disable-tap
+          touch-action="pan-y"
+          tone-mapping="neutral"
+          exposure="1.08"
+          shadow-intensity=".7"
+          shadow-softness=".8"
+          camera-orbit="0deg 75deg 105%"
+          min-camera-orbit="auto 25deg 35%"
+          max-camera-orbit="auto 155deg 220%"
+          min-field-of-view="18deg"
+          max-field-of-view="48deg"
+          field-of-view="32deg"
+          interaction-prompt="auto">
+
+          <button
+            id="testHotspot"
+            class="hotspot"
+            slot="hotspot-test"
+            data-position="0m 0m 0m"
+            data-normal="0m 0m 1m"
+            aria-label="Test point marker">
+            <span></span>
+          </button>
+
+          <div slot="progress-bar" class="progress">
+            <div class="progress-bar"></div>
+          </div>
+        </model-viewer>
+
+        <div class="gesture-hint">
+          <span>↔ Drag to rotate</span>
+          <span>⌕ Pinch / scroll to zoom</span>
+        </div>
+      </div>
+
+      <div class="preset-row">
+        <button id="frontView" class="soft-button">Front view</button>
+        <button id="lowerConchaView" class="soft-button">Lower concha focus</button>
+        <button id="sideView" class="soft-button">Side view</button>
+        <button id="resetView" class="soft-button">Reset</button>
+      </div>
+    </section>
+
+    <section class="test-grid">
+      <article class="test-card">
+        <p class="eyebrow">Anatomy check</p>
+        <h2>Before placing Endocrine</h2>
+        <p>
+          Rotate each ear and inspect the tragus, antitragus, intertragic notch and
+          cavum conchae. Pick the mesh where these structures are easiest to distinguish.
+        </p>
+        <div class="anatomy-list">
+          <span>Tragus</span>
+          <span>Antitragus</span>
+          <span>Intertragic notch</span>
+          <span>Cavum conchae</span>
+        </div>
+      </article>
+
+      <article class="test-card placement-card">
+        <p class="eyebrow">Test marker</p>
+        <h2>Try a 3D surface point</h2>
+        <p>
+          Turn on placement mode, then tap the ear. This is only a technical placement
+          test. It is not yet the approved Endocrine location.
+        </p>
+
+        <button id="placementToggle" class="primary-button" aria-pressed="false">
+          Turn on placement mode
+        </button>
+
+        <div id="pointReadout" class="point-readout" hidden>
+          <div><span>Position</span><code id="positionValue"></code></div>
+          <div><span>Normal</span><code id="normalValue"></code></div>
+          <button id="copyPoint" class="text-button">Copy point data</button>
+        </div>
+      </article>
+    </section>
+
+    <aside class="notice">
+      <strong>Beta rule:</strong>
+      Package 31.2 remains untouched. Nothing selected here changes the approved 2D map.
+    </aside>
+  </main>
+
+  <script src="./js/app.js"></script>
+</body>
+</html>
