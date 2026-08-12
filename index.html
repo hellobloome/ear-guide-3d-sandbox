@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#f8f4ef">
-  <title>Bloomé 3D Ear Beta 1B.8 — 20 Boundary Areas + Point Zero + Mouth</title>
+  <title>Bloomé 3D Ear Beta 1B.9 — Point Visibility + Ear Apex 20-Point Update</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -14,7 +14,7 @@
 <body>
   <header class="topbar">
     <a class="brand" href="./">Bloomé</a>
-    <span class="beta-chip">3D Ear Beta 1B.8</span>
+    <span class="beta-chip">3D Ear Beta 1B.9</span>
   </header>
 
   <main class="shell">
@@ -168,6 +168,44 @@
           </div>
 
           <button
+            id="pointZeroHotspot"
+            class="hotspot locked-hotspot is-active"
+            slot="hotspot-pointZero"
+            data-position="0.0009401790682763943m 0.0008750055831536511m 0.000637664917589334m"
+            data-normal="-0.1584774074429128m 0.31569692511363845m -0.9355321281516563m"
+            aria-label="Point Zero point marker">
+            <span></span>
+          </button>
+
+          <div
+            id="pointZeroLabel"
+            class="label-pill locked-label"
+            slot="hotspot-pointZero-label"
+            data-position="0.0009401790682763943m 0.0008750055831536511m 0.000637664917589334m"
+            data-normal="-0.1584774074429128m 0.31569692511363845m -0.9355321281516563m">
+            Point Zero
+          </div>
+
+          <button
+            id="mouthHotspot"
+            class="hotspot locked-hotspot is-active"
+            slot="hotspot-mouth"
+            data-position="0.0056609512248223665m -0.0023364361927256175m 0.002496305804476434m"
+            data-normal="0.5430653084929933m -0.6719043572210315m -0.503611562078158m"
+            aria-label="Mouth point marker">
+            <span></span>
+          </button>
+
+          <div
+            id="mouthLabel"
+            class="label-pill locked-label"
+            slot="hotspot-mouth-label"
+            data-position="0.0056609512248223665m -0.0023364361927256175m 0.002496305804476434m"
+            data-normal="0.5430653084929933m -0.6719043572210315m -0.503611562078158m">
+            Mouth
+          </div>
+
+          <button
             id="occiputCenterHotspot"
             class="area-center-hotspot is-active"
             slot="hotspot-occiput-center"
@@ -310,14 +348,13 @@
             data-normal="0.11577462795950542m 0.06662497697313947m -0.9910385199194665m">
             Ear Apex area
           </div>
-
           <button
             id="earApexBoundaryHotspot1"
             class="locked-area-boundary is-active"
             slot="hotspot-earApex-boundary-1"
-            data-position="0.011381529765262806m 0.02748914506512628m -0.009419836608469428m"
-            data-normal="0.7474496190881346m 0.42860319432366034m -0.5075611970398813m"
-            aria-label="Ear Apex boundary point 1">
+            data-position="0.011598098872400917m 0.027775228737960376m -0.008137190191657803m"
+            data-normal="0.778677013035901m 0.6199474555284215m -0.09657774978390962m"
+            aria-label="Earapex boundary point 1">
             <span>1</span>
           </button>
 
@@ -325,9 +362,9 @@
             id="earApexBoundaryHotspot2"
             class="locked-area-boundary is-active"
             slot="hotspot-earApex-boundary-2"
-            data-position="0.009709017256939456m 0.025191119924348544m -0.011077729971405631m"
-            data-normal="-0.5065583901246564m -0.5593482036847315m -0.6561464656835244m"
-            aria-label="Ear Apex boundary point 2">
+            data-position="0.008374034344443181m 0.030538450937860832m -0.008458276690510622m"
+            data-normal="0.589214626795533m 0.8079725046303414m 0.002560338175608847m"
+            aria-label="Earapex boundary point 2">
             <span>2</span>
           </button>
 
@@ -335,9 +372,9 @@
             id="earApexBoundaryHotspot3"
             class="locked-area-boundary is-active"
             slot="hotspot-earApex-boundary-3"
-            data-position="0.007965190448649007m 0.02686423237361972m -0.011644775522722473m"
-            data-normal="-0.10765895561894484m -0.49761233235553737m -0.8606924630567647m"
-            aria-label="Ear Apex boundary point 3">
+            data-position="0.0056283866706415015m 0.03184105182645405m -0.009246563943446022m"
+            data-normal="0.4035483908289519m 0.9148235656129097m 0.015701594143454036m"
+            aria-label="Earapex boundary point 3">
             <span>3</span>
           </button>
 
@@ -345,9 +382,9 @@
             id="earApexBoundaryHotspot4"
             class="locked-area-boundary is-active"
             slot="hotspot-earApex-boundary-4"
-            data-position="0.005205667211052364m 0.0282912053996982m -0.01219797205983357m"
-            data-normal="0.003618583965742038m -0.3965797920904203m -0.9179931232616082m"
-            aria-label="Ear Apex boundary point 4">
+            data-position="0.002718733424620815m 0.032370563410123024m -0.00914327688488726m"
+            data-normal="0.1831259752259337m 0.9795519946201175m -0.08332326825863129m"
+            aria-label="Earapex boundary point 4">
             <span>4</span>
           </button>
 
@@ -355,9 +392,9 @@
             id="earApexBoundaryHotspot5"
             class="locked-area-boundary is-active"
             slot="hotspot-earApex-boundary-5"
-            data-position="0.0016609472878652935m 0.02884912343854995m -0.012640387497627137m"
-            data-normal="0.10561284500185732m -0.42667515301062564m -0.8982172570007619m"
-            aria-label="Ear Apex boundary point 5">
+            data-position="0.0001255526956888929m 0.032339662320191497m -0.00931941915771902m"
+            data-normal="-0.004507048555681136m 0.9746303326141287m -0.22377533658066392m"
+            aria-label="Earapex boundary point 5">
             <span>5</span>
           </button>
 
@@ -365,9 +402,9 @@
             id="earApexBoundaryHotspot6"
             class="locked-area-boundary is-active"
             slot="hotspot-earApex-boundary-6"
-            data-position="-0.0020381442474988534m 0.028261478093206557m -0.013010092971544998m"
-            data-normal="0.25556123438252354m -0.4814262137778687m -0.8384016079233072m"
-            aria-label="Ear Apex boundary point 6">
+            data-position="-0.002679365816491872m 0.03192898905496877m -0.009529526379296133m"
+            data-normal="-0.18228312672137242m 0.944710458627428m -0.2725711119554582m"
+            aria-label="Earapex boundary point 6">
             <span>6</span>
           </button>
 
@@ -375,9 +412,9 @@
             id="earApexBoundaryHotspot7"
             class="locked-area-boundary is-active"
             slot="hotspot-earApex-boundary-7"
-            data-position="-0.005570116632707345m 0.02651178326369484m -0.013392469726340783m"
-            data-normal="0.285938701621628m -0.21435676251369798m -0.9339647944540436m"
-            aria-label="Ear Apex boundary point 7">
+            data-position="-0.005279178475280399m 0.030963218159377796m -0.010201377932251995m"
+            data-normal="-0.34341778238973436m 0.8822814226762056m -0.3219374441393356m"
+            aria-label="Earapex boundary point 7">
             <span>7</span>
           </button>
 
@@ -385,9 +422,9 @@
             id="earApexBoundaryHotspot8"
             class="locked-area-boundary is-active"
             slot="hotspot-earApex-boundary-8"
-            data-position="-0.007931521898423863m 0.028784497282230478m -0.01208252411602087m"
-            data-normal="-0.46362762993917445m 0.8223615595005486m -0.3298043150306096m"
-            aria-label="Ear Apex boundary point 8">
+            data-position="-0.007824069593569542m 0.029606111677879077m -0.010140386440037619m"
+            data-normal="-0.5655585817606589m 0.780087877242844m -0.26759371139028243m"
+            aria-label="Earapex boundary point 8">
             <span>8</span>
           </button>
 
@@ -395,9 +432,9 @@
             id="earApexBoundaryHotspot9"
             class="locked-area-boundary is-active"
             slot="hotspot-earApex-boundary-9"
-            data-position="-0.0006209288933800433m 0.03222780820534646m -0.009791553334801292m"
-            data-normal="-0.004507048555681136m 0.9746303326141287m -0.22377533658066392m"
-            aria-label="Ear Apex boundary point 9">
+            data-position="-0.008710410959842757m 0.028869844206255935m -0.010413469699642297m"
+            data-normal="-0.5655585817606589m 0.780087877242844m -0.26759371139028243m"
+            aria-label="Earapex boundary point 9">
             <span>9</span>
           </button>
 
@@ -405,11 +442,112 @@
             id="earApexBoundaryHotspot10"
             class="locked-area-boundary is-active"
             slot="hotspot-earApex-boundary-10"
-            data-position="0.007342972948745179m 0.030834477787056894m -0.009641687059529266m"
-            data-normal="0.452350605308536m 0.792468672693647m -0.40911163840224657m"
-            aria-label="Ear Apex boundary point 10">
+            data-position="-0.005650604701644626m 0.02646398353431748m -0.013406140968303434m"
+            data-normal="0.285938701621628m -0.21435676251369798m -0.9339647944540436m"
+            aria-label="Earapex boundary point 10">
             <span>10</span>
           </button>
+
+          <button
+            id="earApexBoundaryHotspot11"
+            class="locked-area-boundary is-active"
+            slot="hotspot-earApex-boundary-11"
+            data-position="-0.0041525368473991605m 0.0272724499918121m -0.013041485686780194m"
+            data-normal="0.34337028625542854m -0.7999131786451964m -0.4921745149300229m"
+            aria-label="Earapex boundary point 11">
+            <span>11</span>
+          </button>
+
+          <button
+            id="earApexBoundaryHotspot12"
+            class="locked-area-boundary is-active"
+            slot="hotspot-earApex-boundary-12"
+            data-position="-0.0019966519803049825m 0.028139037406401602m -0.01292771894957858m"
+            data-normal="0.25288448483054926m -0.40934198620703716m -0.8766348017618657m"
+            aria-label="Earapex boundary point 12">
+            <span>12</span>
+          </button>
+
+          <button
+            id="earApexBoundaryHotspot13"
+            class="locked-area-boundary is-active"
+            slot="hotspot-earApex-boundary-13"
+            data-position="-0.00023996125057963117m 0.02841813664849144m -0.012686130120796897m"
+            data-normal="0.19106090755552482m -0.4983936377850704m -0.845635566553006m"
+            aria-label="Earapex boundary point 13">
+            <span>13</span>
+          </button>
+
+          <button
+            id="earApexBoundaryHotspot14"
+            class="locked-area-boundary is-active"
+            slot="hotspot-earApex-boundary-14"
+            data-position="0.0016087586272664966m 0.028671846240077577m -0.012543031596150077m"
+            data-normal="0.07362238350912864m -0.5263609165488959m -0.8470678427234983m"
+            aria-label="Earapex boundary point 14">
+            <span>14</span>
+          </button>
+
+          <button
+            id="earApexBoundaryHotspot15"
+            class="locked-area-boundary is-active"
+            slot="hotspot-earApex-boundary-15"
+            data-position="0.003610428617641449m 0.02850941621598832m -0.012292351371826195m"
+            data-normal="-0.005446295582011791m -0.41261777634227087m -0.9108879780251758m"
+            aria-label="Earapex boundary point 15">
+            <span>15</span>
+          </button>
+
+          <button
+            id="earApexBoundaryHotspot16"
+            class="locked-area-boundary is-active"
+            slot="hotspot-earApex-boundary-16"
+            data-position="0.005232883378294303m 0.028005246056254863m -0.012073671131425788m"
+            data-normal="-0.005446295582011791m -0.41261777634227087m -0.9108879780251758m"
+            aria-label="Earapex boundary point 16">
+            <span>16</span>
+          </button>
+
+          <button
+            id="earApexBoundaryHotspot17"
+            class="locked-area-boundary is-active"
+            slot="hotspot-earApex-boundary-17"
+            data-position="0.006763586720584275m 0.027202361517198886m -0.011673734664020434m"
+            data-normal="-0.2529976639357952m -0.7561230333619906m -0.6035479603664422m"
+            aria-label="Earapex boundary point 17">
+            <span>17</span>
+          </button>
+
+          <button
+            id="earApexBoundaryHotspot18"
+            class="locked-area-boundary is-active"
+            slot="hotspot-earApex-boundary-18"
+            data-position="0.008125007409901791m 0.02619039925761436m -0.011173347471442635m"
+            data-normal="-0.4829130206320513m -0.7298414382448313m -0.4838661896896128m"
+            aria-label="Earapex boundary point 18">
+            <span>18</span>
+          </button>
+
+          <button
+            id="earApexBoundaryHotspot19"
+            class="locked-area-boundary is-active"
+            slot="hotspot-earApex-boundary-19"
+            data-position="0.009430479172067605m 0.02499429191586625m -0.010772295666626089m"
+            data-normal="-0.2714491346361703m -0.573710531424068m -0.7727687839440641m"
+            aria-label="Earapex boundary point 19">
+            <span>19</span>
+          </button>
+
+          <button
+            id="earApexBoundaryHotspot20"
+            class="locked-area-boundary is-active"
+            slot="hotspot-earApex-boundary-20"
+            data-position="0.010615358447252799m 0.026069528318727712m -0.01093624660448237m"
+            data-normal="0.5837446722488701m 0.09899451220136281m -0.8058797951152972m"
+            aria-label="Earapex boundary point 20">
+            <span>20</span>
+          </button>
+
 
           <svg id="earApexAreaOverlay" class="area-overlay" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
             <polygon id="earApexAreaPolygon" class="area-polygon" points=""></polygon>
@@ -630,6 +768,7 @@
           </button>
 
 
+
           <div slot="progress-bar" class="progress">
             <div class="progress-bar"></div>
           </div>
@@ -772,7 +911,7 @@
         <p class="eyebrow">Locked areas + calibration</p>
         <h2>Occiput and Ear Apex are now locked as areas</h2>
         <p>
-          Occiput now stays visible as a clean translucent patch without boundary markers, and Ear Apex is now added as a second locked area using 10 approved boundary points. You can still use area mode below if you want to refine either region or calibrate another area later, and now you can place up to 20 boundary points for finer tracing.
+          Occiput now stays visible as a clean translucent patch without boundary markers, and Ear Apex is now added as a second locked area using 20 approved boundary points. You can still use area mode below if you want to refine either region or calibrate another area later, and now you can place up to 20 boundary points for finer tracing.
         </p>
         <div class="area-guidance">
           <span>2 locked areas</span>
@@ -795,8 +934,8 @@
 
           <div class="locked-area-summary">
             <p class="eyebrow no-margin">Locked area 2</p>
-            <strong>Ear Apex · 10 boundary points</strong>
-            <p>The approved Ear Apex region is displayed as a translucent patch built from your 10 mapped boundary points.</p>
+            <strong>Ear Apex · 20 boundary points</strong>
+            <p>The approved Ear Apex region is displayed as a translucent patch built from your 20 mapped boundary points.</p>
             <button id="focusEarApexArea" class="secondary-button" data-focus-area="earApex">Focus Ear Apex area</button>
             <button class="text-button copy-locked-area" data-copy-area="earApex">Copy locked Ear Apex area data</button>
           </div>
