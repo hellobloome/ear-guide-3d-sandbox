@@ -162,3 +162,71 @@ code{font-size:.69rem;overflow-wrap:anywhere;color:var(--burgundy)}
     margin:8px 0 0;
   }
 }
+
+
+/* ==========================================================
+   Beta 1B.3 — Four locked points
+   ========================================================== */
+.locked-hotspot{
+  background:var(--burgundy);
+}
+.locked-label.is-hidden{
+  display:none;
+}
+.point-chip-list{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin:4px 0 14px;
+}
+.point-chip{
+  min-height:38px;
+  padding:7px 12px;
+  border:1px solid var(--border);
+  border-radius:999px;
+  background:#fff;
+  color:var(--burgundy);
+  cursor:pointer;
+  font-weight:600;
+  font-size:.74rem;
+}
+.point-chip:hover{
+  border-color:rgba(90,22,17,.28);
+  box-shadow:0 5px 14px rgba(90,22,17,.06);
+}
+.label-toggle{
+  margin-left:0;
+}
+.multi-locked-readout{
+  display:grid;
+  gap:12px;
+}
+.locked-point-row{
+  padding:14px 0;
+  border-bottom:1px solid var(--border);
+}
+.locked-point-row:last-child{
+  border-bottom:0;
+}
+.locked-point-row > strong{
+  display:block;
+  margin-bottom:9px;
+  color:var(--burgundy);
+  font-family:"Cormorant Garamond",serif;
+  font-size:1.25rem;
+}
+.locked-point-row > div{
+  display:grid;
+  grid-template-columns:70px 1fr;
+  gap:8px;
+  margin-bottom:7px;
+}
+.locked-point-row > div span{
+  font-size:.7rem;
+  color:var(--muted);
+}
+@media(max-width:600px){
+  .point-chip{
+    min-height:42px;
+  }
+}

@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#f8f4ef">
-  <title>Bloomé 3D Ear Beta 1B.2 — Endocrine + Placement Mode</title>
+  <title>Bloomé 3D Ear Beta 1B.3 — Four Locked Points</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -14,17 +14,17 @@
 <body>
   <header class="topbar">
     <a class="brand" href="./">Bloomé</a>
-    <span class="beta-chip">3D Ear Beta 1B.2</span>
+    <span class="beta-chip">3D Ear Beta 1B.3</span>
   </header>
 
   <main class="shell">
     <section class="intro">
       <p class="eyebrow">Standalone 3D validation</p>
-      <h1>Endocrine point locked on Ear 1.</h1>
+      <h1>Four 3D points locked on Ear 1.</h1>
       <p>
-        This beta uses only the approved Ear 1 model and a fixed test marker for the
-        Endocrine point. The goal is to validate whether the intertragic notch / lower
-        concha area reads more clearly in 3D than on the main 2D map.
+        This beta keeps the selected Ear 1 model and now locks Endocrine, Sympathetic,
+        Subcortex and Thalamus as separate 3D surface points. Free placement mode remains
+        available so we can calibrate additional points without moving the locked set.
       </p>
     </section>
 
@@ -34,14 +34,14 @@
           <p class="eyebrow no-margin">Approved mesh</p>
           <strong class="toolbar-title">Ear 1 only</strong>
         </div>
-        <span id="modelStatus" class="status">Loading Endocrine model…</span>
+        <span id="modelStatus" class="status">Loading four-point model…</span>
       </div>
 
       <div class="viewer-wrap">
         <model-viewer
           id="earViewer"
           src="./models/ear-1.glb"
-          alt="Interactive 3D model of the external ear showing the Endocrine point"
+          alt="Interactive 3D model of the external ear showing four locked Bloomé beta points"
           camera-controls
           touch-action="pan-y"
           tone-mapping="neutral"
@@ -58,13 +58,79 @@
 
           <button
             id="endocrineHotspot"
-            class="hotspot is-active"
+            class="hotspot locked-hotspot is-active"
             slot="hotspot-endocrine"
             data-position="0.009773924042668837m -0.014079374316460704m -0.0018216833743757571m"
             data-normal="0.47519742534282616m 0.7657524390068502m -0.43337121397551237m"
             aria-label="Endocrine point marker">
             <span></span>
           </button>
+
+          <div
+            id="endocrineLabel"
+            class="label-pill locked-label"
+            slot="hotspot-endocrine-label"
+            data-position="0.009773924042668837m -0.014079374316460704m -0.0018216833743757571m"
+            data-normal="0.47519742534282616m 0.7657524390068502m -0.43337121397551237m">
+            Endocrine
+          </div>
+
+          <button
+            id="sympatheticHotspot"
+            class="hotspot locked-hotspot is-active"
+            slot="hotspot-sympathetic"
+            data-position="0.011181402923839887m 0.011667931795852654m -0.00113929592513589m"
+            data-normal="-0.5132019242580357m 0.14157027620511384m -0.8465114540471718m"
+            aria-label="Sympathetic point marker">
+            <span></span>
+          </button>
+
+          <div
+            id="sympatheticLabel"
+            class="label-pill locked-label"
+            slot="hotspot-sympathetic-label"
+            data-position="0.011181402923839887m 0.011667931795852654m -0.00113929592513589m"
+            data-normal="-0.5132019242580357m 0.14157027620511384m -0.8465114540471718m">
+            Sympathetic
+          </div>
+
+          <button
+            id="subcortexHotspot"
+            class="hotspot locked-hotspot is-active"
+            slot="hotspot-subcortex"
+            data-position="0.005622201022628646m -0.008027627583324322m -0.007285956116623894m"
+            data-normal="0.42477898955910637m 0.9031278682878421m -0.06263276739058284m"
+            aria-label="Subcortex point marker">
+            <span></span>
+          </button>
+
+          <div
+            id="subcortexLabel"
+            class="label-pill locked-label"
+            slot="hotspot-subcortex-label"
+            data-position="0.005622201022628646m -0.008027627583324322m -0.007285956116623894m"
+            data-normal="0.42477898955910637m 0.9031278682878421m -0.06263276739058284m">
+            Subcortex
+          </div>
+
+          <button
+            id="thalamusHotspot"
+            class="hotspot locked-hotspot is-active"
+            slot="hotspot-thalamus"
+            data-position="0.005539053244458796m -0.00920252511047151m -0.004354114972614249m"
+            data-normal="0.4434051161040665m 0.6844891516128396m 0.5786765109602033m"
+            aria-label="Thalamus point marker">
+            <span></span>
+          </button>
+
+          <div
+            id="thalamusLabel"
+            class="label-pill locked-label"
+            slot="hotspot-thalamus-label"
+            data-position="0.005539053244458796m -0.00920252511047151m -0.004354114972614249m"
+            data-normal="0.4434051161040665m 0.6844891516128396m 0.5786765109602033m">
+            Thalamus
+          </div>
 
           <button
             id="calibrationHotspot"
@@ -75,10 +141,6 @@
             aria-label="Temporary calibration marker">
             <span></span>
           </button>
-
-          <div class="label-pill" slot="hotspot-endocrine-label" data-position="0.009773924042668837m -0.014079374316460704m -0.0018216833743757571m" data-normal="0.47519742534282616m 0.7657524390068502m -0.43337121397551237m">
-            Endocrine
-          </div>
 
           <div slot="progress-bar" class="progress">
             <div class="progress-bar"></div>
@@ -101,25 +163,29 @@
 
     <section class="test-grid">
       <article class="test-card">
-        <p class="eyebrow">Point summary</p>
-        <h2>Why this point is in 3D</h2>
+        <p class="eyebrow">Locked 3D library</p>
+        <h2>Four points are now fixed</h2>
         <p>
-          Endocrine sits in a recessed area around the intertragic notch / floor of the
-          cavum conchae, which can be harder to communicate on a flat ear illustration.
-          This beta checks whether 3D gives a more intuitive sense of depth.
+          These markers stay attached to their saved 3D surface positions while you
+          rotate and zoom the ear. Tap a point name below to center the camera target
+          near that point for closer inspection.
         </p>
-        <div class="anatomy-list">
-          <span>Intertragic notch</span>
-          <span>Lower concha</span>
-          <span>Depth-sensitive point</span>
+        <div class="point-chip-list">
+          <button class="point-chip" data-focus-point="endocrine">Endocrine</button>
+          <button class="point-chip" data-focus-point="sympathetic">Sympathetic</button>
+          <button class="point-chip" data-focus-point="subcortex">Subcortex</button>
+          <button class="point-chip" data-focus-point="thalamus">Thalamus</button>
         </div>
+        <button id="toggleLabels" class="secondary-button label-toggle" aria-pressed="false">
+          Hide point labels
+        </button>
       </article>
 
       <article class="test-card placement-card">
         <p class="eyebrow">3D calibration tool</p>
-        <h2>Place the next point without losing Endocrine</h2>
+        <h2>Place the next point without moving the locked four</h2>
         <p>
-          Endocrine remains locked. Turn on placement mode and tap anywhere on Ear 1
+          All four points remain locked. Turn on placement mode and tap anywhere on Ear 1
           to create a separate temporary marker for the next point we want to test.
         </p>
 
@@ -137,11 +203,41 @@
         </div>
 
         <details class="locked-details">
-          <summary>Show locked Endocrine coordinates</summary>
-          <div class="point-readout locked-readout">
-            <div><span>Position</span><code>0.009773924042668837m -0.014079374316460704m -0.0018216833743757571m</code></div>
-            <div><span>Normal</span><code>0.47519742534282616m 0.7657524390068502m -0.43337121397551237m</code></div>
-            <button id="copyPoint" class="text-button">Copy Endocrine data</button>
+          <summary>Show locked 3D coordinate library</summary>
+          <div class="point-readout locked-readout multi-locked-readout">
+            <section class="locked-point-row">
+              <strong>Endocrine</strong>
+              <div><span>Position</span><code>0.009773924042668837m -0.014079374316460704m -0.0018216833743757571m</code></div>
+              <div><span>Normal</span><code>0.47519742534282616m 0.7657524390068502m -0.43337121397551237m</code></div>
+              <button class="text-button copy-locked-point" data-copy-point="endocrine">
+                Copy Endocrine data
+              </button>
+            </section>
+            <section class="locked-point-row">
+              <strong>Sympathetic</strong>
+              <div><span>Position</span><code>0.011181402923839887m 0.011667931795852654m -0.00113929592513589m</code></div>
+              <div><span>Normal</span><code>-0.5132019242580357m 0.14157027620511384m -0.8465114540471718m</code></div>
+              <button class="text-button copy-locked-point" data-copy-point="sympathetic">
+                Copy Sympathetic data
+              </button>
+            </section>
+            <section class="locked-point-row">
+              <strong>Subcortex</strong>
+              <div><span>Position</span><code>0.005622201022628646m -0.008027627583324322m -0.007285956116623894m</code></div>
+              <div><span>Normal</span><code>0.42477898955910637m 0.9031278682878421m -0.06263276739058284m</code></div>
+              <button class="text-button copy-locked-point" data-copy-point="subcortex">
+                Copy Subcortex data
+              </button>
+            </section>
+            <section class="locked-point-row">
+              <strong>Thalamus</strong>
+              <div><span>Position</span><code>0.005539053244458796m -0.00920252511047151m -0.004354114972614249m</code></div>
+              <div><span>Normal</span><code>0.4434051161040665m 0.6844891516128396m 0.5786765109602033m</code></div>
+              <button class="text-button copy-locked-point" data-copy-point="thalamus">
+                Copy Thalamus data
+              </button>
+            </section>
+
           </div>
         </details>
       </article>
