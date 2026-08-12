@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#f8f4ef">
-  <title>Bloomé 3D Ear Beta 1B.4 — Adrenal + Area Calibration</title>
+  <title>Bloomé 3D Ear Beta 1B.5 — Occiput Area Locked</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -14,17 +14,15 @@
 <body>
   <header class="topbar">
     <a class="brand" href="./">Bloomé</a>
-    <span class="beta-chip">3D Ear Beta 1B.4</span>
+    <span class="beta-chip">3D Ear Beta 1B.5</span>
   </header>
 
   <main class="shell">
     <section class="intro">
       <p class="eyebrow">Standalone 3D validation</p>
-      <h1>Five points locked, with area calibration ready.</h1>
+      <h1>Five points plus the first locked area.</h1>
       <p>
-        This beta locks Endocrine, Sympathetic, Subcortex, Thalamus and Adrenal on Ear 1.
-        Point placement remains available, and a separate multi-tap area calibration mode
-        is now included so we can trace Occiput as a region instead of forcing it into one dot.
+        This beta keeps the five approved locked points on Ear 1 and now adds the first locked area: Occiput. The locked Occiput region is shown directly on the 3D ear, while both point placement mode and area calibration mode remain available for future calibration work.
       </p>
     </section>
 
@@ -34,14 +32,14 @@
           <p class="eyebrow no-margin">Approved mesh</p>
           <strong class="toolbar-title">Ear 1 only</strong>
         </div>
-        <span id="modelStatus" class="status">Loading five-point model…</span>
+        <span id="modelStatus" class="status">Loading locked point-and-area model…</span>
       </div>
 
       <div class="viewer-wrap">
         <model-viewer
           id="earViewer"
           src="./models/ear-1.glb"
-          alt="Interactive 3D model of the external ear showing five locked Bloomé beta points and area calibration markers"
+          alt="Interactive 3D model of the external ear showing five locked Bloomé beta points and the locked Occiput area"
           camera-controls
           touch-action="pan-y"
           tone-mapping="neutral"
@@ -150,6 +148,66 @@
             data-normal="0.18959473971573781m -0.0024429091862066257m -0.9818593926152713m">
             Adrenal
           </div>
+
+
+          <button
+            id="occiputCenterHotspot"
+            class="occiput-center-hotspot is-active"
+            slot="hotspot-occiput-center"
+            data-position="0.0018973902953472828m -0.01262926626828471m -0.010344359682963027m"
+            data-normal="0.21329785792371098m 0.13558519210617168m -0.9675332963194027m"
+            aria-label="Occiput area center">
+            <span></span>
+          </button>
+
+          <div
+            id="occiputCenterLabel"
+            class="label-pill locked-label occiput-label"
+            slot="hotspot-occiput-center-label"
+            data-position="0.0018973902953472828m -0.01262926626828471m -0.010344359682963027m"
+            data-normal="0.21329785792371098m 0.13558519210617168m -0.9675332963194027m">
+            Occiput area
+          </div>
+
+          <button
+            id="occiputBoundaryHotspot1"
+            class="locked-area-boundary is-active"
+            slot="hotspot-occiput-boundary-1"
+            data-position="0.005580083851689066m -0.009140114582105684m -0.0092023583290608m"
+            data-normal="0.45019971124962516m 0.2287415412921462m -0.8631323926710477m"
+            aria-label="Occiput boundary point 1">
+            <span>1</span>
+          </button>
+
+          <button
+            id="occiputBoundaryHotspot2"
+            class="locked-area-boundary is-active"
+            slot="hotspot-occiput-boundary-2"
+            data-position="0.0053748263485127595m -0.015453982899116623m -0.00933496738997372m"
+            data-normal="0.3623864002652049m 0.13970017651045677m -0.9214987561498789m"
+            aria-label="Occiput boundary point 2">
+            <span>2</span>
+          </button>
+
+          <button
+            id="occiputBoundaryHotspot3"
+            class="locked-area-boundary is-active"
+            slot="hotspot-occiput-boundary-3"
+            data-position="-0.007839476639670225m -0.0168302670952966m -0.013301590085479195m"
+            data-normal="-0.2738923027760284m -0.15047271366569762m -0.9499162957451176m"
+            aria-label="Occiput boundary point 3">
+            <span>3</span>
+          </button>
+
+          <button
+            id="occiputBoundaryHotspot4"
+            class="locked-area-boundary is-active"
+            slot="hotspot-occiput-boundary-4"
+            data-position="0.00447412762085753m -0.009092700496619938m -0.009538522927338394m"
+            data-normal="0.26651585400939254m 0.2938716110112666m -0.9179372395775688m"
+            aria-label="Occiput boundary point 4">
+            <span>4</span>
+          </button>
 
           <button
             id="calibrationHotspot"
@@ -283,11 +341,9 @@
     <section class="test-grid">
       <article class="test-card">
         <p class="eyebrow">Locked 3D library</p>
-        <h2>Five points are now fixed</h2>
+        <h2>Five points plus one area are now fixed</h2>
         <p>
-          These five markers stay attached to their saved 3D surface positions while you
-          rotate and zoom the ear. Tap a point name below to center the camera target
-          near that point for closer inspection.
+          The five locked markers stay attached to their saved 3D surface positions while you rotate and zoom the ear. Occiput is now shown as a locked highlighted area. Tap a point or area name below to center the camera target for closer inspection.
         </p>
         <div class="point-chip-list">
           <button class="point-chip" data-focus-point="endocrine">Endocrine</button>
@@ -295,6 +351,7 @@
           <button class="point-chip" data-focus-point="subcortex">Subcortex</button>
           <button class="point-chip" data-focus-point="thalamus">Thalamus</button>
           <button class="point-chip" data-focus-point="adrenal">Adrenal</button>
+          <button class="point-chip point-chip-area" data-focus-area="occiput">Occiput area</button>
         </div>
         <button id="toggleLabels" class="secondary-button label-toggle" aria-pressed="false">
           Hide point labels
@@ -373,25 +430,30 @@
 
     <section class="area-calibration-card">
       <div class="area-calibration-copy">
-        <p class="eyebrow">Area calibration</p>
-        <h2>Trace the Occiput region</h2>
+        <p class="eyebrow">Locked area + calibration</p>
+        <h2>Occiput is now locked as an area</h2>
         <p>
-          Use this mode when a region is more useful than a single pinpoint. Rotate to
-          the antitragus, turn on area mode, then tap around the boundary of the Occiput
-          region in order. Aim for about 4–6 taps.
+          The current locked Occiput area uses the four approved boundary taps you provided. You can still use area mode below if you want to refine the region or calibrate another area later.
         </p>
         <div class="area-guidance">
-          <span>1. Rotate to the region</span>
-          <span>2. Turn on area mode</span>
-          <span>3. Tap boundary in order</span>
-          <span>4. Copy all area data</span>
+          <span>4 locked boundary points</span>
+          <span>Center anchor shown</span>
+          <span>Area remains visible while rotating</span>
+          <span>Recalibration mode still available</span>
         </div>
       </div>
 
       <div class="area-controls">
+        <div class="locked-area-summary">
+          <p class="eyebrow no-margin">Current locked area</p>
+          <strong>Occiput · 4 boundary points</strong>
+          <p>The boundary taps are already loaded on the ear as the approved Occiput region.</p>
+          <button id="focusOcciputArea" class="secondary-button">Focus Occiput area</button>
+          <button id="copyLockedArea" class="text-button">Copy locked Occiput data</button>
+        </div>
         <div class="area-button-row">
           <button id="areaModeToggle" class="primary-button" aria-pressed="false">
-            Turn on Occiput area mode
+            Turn on area calibration mode
           </button>
           <button id="undoAreaPoint" class="secondary-button" disabled>
             Undo last

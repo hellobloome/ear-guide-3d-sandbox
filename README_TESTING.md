@@ -34,3 +34,10 @@ Bloomé Guide Package 31.2 remains untouched.
 
 ## GitHub Desktop summary
 `Beta 1B.4 - Lock Adrenal + Add Occiput Area Calibration`
+
+
+## Beta 1B.5 update
+- Occiput is now loaded as a locked area using 4 approved boundary points.
+- Use **Focus Occiput area** to jump the camera closer to that region.
+- Use **Copy locked Occiput data** if you want to review the approved area coordinates.
+- Area calibration mode is still empty by default and can be reused for future area tracing.
