@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#f8f4ef">
-  <title>Bloomé 3D Ear Beta 1B.6 — Front View + Occiput Patch</title>
+  <title>Bloomé 3D Ear Beta 1B.7 — Brain + Ear Apex Area</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -14,15 +14,15 @@
 <body>
   <header class="topbar">
     <a class="brand" href="./">Bloomé</a>
-    <span class="beta-chip">3D Ear Beta 1B.6</span>
+    <span class="beta-chip">3D Ear Beta 1B.7</span>
   </header>
 
   <main class="shell">
     <section class="intro">
       <p class="eyebrow">Standalone 3D validation</p>
-      <h1>Five points plus a refined Occiput area.</h1>
+      <h1>Six points plus two refined areas.</h1>
       <p>
-        This beta corrects the default front-facing orientation and upgrades the locked Occiput area using 10 approved boundary points. The Occiput region is now shown as a translucent highlighted patch instead of a single large dot, while point placement mode and area calibration mode both remain available for future calibration work.
+        This beta keeps the corrected front-facing orientation, removes the Occiput boundary markers, adds the Brain point, and adds Ear Apex as a second locked area using 10 approved boundary points. Both areas are now shown as translucent highlighted patches while point placement mode and area calibration mode remain available for future calibration work.
       </p>
     </section>
 
@@ -32,14 +32,14 @@
           <p class="eyebrow no-margin">Approved mesh</p>
           <strong class="toolbar-title">Ear 1 only</strong>
         </div>
-        <span id="modelStatus" class="status">Loading refined point-and-area model…</span>
+        <span id="modelStatus" class="status">Loading updated point-and-area model…</span>
       </div>
 
       <div class="viewer-wrap">
         <model-viewer
           id="earViewer"
           src="./models/ear-1.glb"
-          alt="Interactive 3D model of the external ear showing five locked Bloomé beta points and the locked Occiput area"
+          alt="Interactive 3D model of the external ear showing six locked Bloomé beta points and the locked Occiput and Ear Apex areas"
           camera-controls
           touch-action="pan-y"
           tone-mapping="neutral"
@@ -148,10 +148,28 @@
             data-normal="0.18959473971573781m -0.0024429091862066257m -0.9818593926152713m">
             Adrenal
           </div>
+          <button
+            id="brainHotspot"
+            class="hotspot locked-hotspot is-active"
+            slot="hotspot-brain"
+            data-position="-0.0004555845272072312m -0.006189061561736917m -0.007451785428202469m"
+            data-normal="0.2462127670513261m 0.8359014109897481m 0.4905589714257376m"
+            aria-label="Brain point marker">
+            <span></span>
+          </button>
+
+          <div
+            id="brainLabel"
+            class="label-pill locked-label"
+            slot="hotspot-brain-label"
+            data-position="-0.0004555845272072312m -0.006189061561736917m -0.007451785428202469m"
+            data-normal="0.2462127670513261m 0.8359014109897481m 0.4905589714257376m">
+            Brain
+          </div>
 
           <button
             id="occiputCenterHotspot"
-            class="occiput-center-hotspot is-active"
+            class="area-center-hotspot is-active"
             slot="hotspot-occiput-center"
             data-position="0.0003029567325611977m -0.013934935061583909m -0.010940474335632047m"
             data-normal="0.2512272499758329m 0.2136579153746888m -0.9440525218796477m"
@@ -161,7 +179,7 @@
 
           <div
             id="occiputCenterLabel"
-            class="label-pill locked-label occiput-label"
+            class="label-pill locked-label area-label occiput-label"
             slot="hotspot-occiput-center-label"
             data-position="0.0003029567325611977m -0.013934935061583909m -0.010940474335632047m"
             data-normal="0.2512272499758329m 0.2136579153746888m -0.9440525218796477m">
@@ -268,10 +286,137 @@
             <span>10</span>
           </button>
 
-          <svg id="occiputAreaOverlay" class="occiput-area-overlay" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
-            <polygon id="occiputAreaPolygon" class="occiput-area-polygon" points=""></polygon>
-            <polyline id="occiputAreaOutline" class="occiput-area-outline" points=""></polyline>
+          <svg id="occiputAreaOverlay" class="area-overlay" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+            <polygon id="occiputAreaPolygon" class="area-polygon" points=""></polygon>
+            <polyline id="occiputAreaOutline" class="area-outline" points=""></polyline>
           </svg>
+
+
+          <button
+            id="earApexCenterHotspot"
+            class="area-center-hotspot is-active"
+            slot="hotspot-earApex-center"
+            data-position="0.0027104613246504003m 0.02833048708328779m -0.011489902886829545m"
+            data-normal="0.11577462795950542m 0.06662497697313947m -0.9910385199194665m"
+            aria-label="Ear Apex area center">
+            <span></span>
+          </button>
+
+          <div
+            id="earApexCenterLabel"
+            class="label-pill locked-label area-label earapex-label"
+            slot="hotspot-earApex-center-label"
+            data-position="0.0027104613246504003m 0.02833048708328779m -0.011489902886829545m"
+            data-normal="0.11577462795950542m 0.06662497697313947m -0.9910385199194665m">
+            Ear Apex area
+          </div>
+
+          <button
+            id="earApexBoundaryHotspot1"
+            class="locked-area-boundary is-active"
+            slot="hotspot-earApex-boundary-1"
+            data-position="0.011381529765262806m 0.02748914506512628m -0.009419836608469428m"
+            data-normal="0.7474496190881346m 0.42860319432366034m -0.5075611970398813m"
+            aria-label="Ear Apex boundary point 1">
+            <span>1</span>
+          </button>
+
+          <button
+            id="earApexBoundaryHotspot2"
+            class="locked-area-boundary is-active"
+            slot="hotspot-earApex-boundary-2"
+            data-position="0.009709017256939456m 0.025191119924348544m -0.011077729971405631m"
+            data-normal="-0.5065583901246564m -0.5593482036847315m -0.6561464656835244m"
+            aria-label="Ear Apex boundary point 2">
+            <span>2</span>
+          </button>
+
+          <button
+            id="earApexBoundaryHotspot3"
+            class="locked-area-boundary is-active"
+            slot="hotspot-earApex-boundary-3"
+            data-position="0.007965190448649007m 0.02686423237361972m -0.011644775522722473m"
+            data-normal="-0.10765895561894484m -0.49761233235553737m -0.8606924630567647m"
+            aria-label="Ear Apex boundary point 3">
+            <span>3</span>
+          </button>
+
+          <button
+            id="earApexBoundaryHotspot4"
+            class="locked-area-boundary is-active"
+            slot="hotspot-earApex-boundary-4"
+            data-position="0.005205667211052364m 0.0282912053996982m -0.01219797205983357m"
+            data-normal="0.003618583965742038m -0.3965797920904203m -0.9179931232616082m"
+            aria-label="Ear Apex boundary point 4">
+            <span>4</span>
+          </button>
+
+          <button
+            id="earApexBoundaryHotspot5"
+            class="locked-area-boundary is-active"
+            slot="hotspot-earApex-boundary-5"
+            data-position="0.0016609472878652935m 0.02884912343854995m -0.012640387497627137m"
+            data-normal="0.10561284500185732m -0.42667515301062564m -0.8982172570007619m"
+            aria-label="Ear Apex boundary point 5">
+            <span>5</span>
+          </button>
+
+          <button
+            id="earApexBoundaryHotspot6"
+            class="locked-area-boundary is-active"
+            slot="hotspot-earApex-boundary-6"
+            data-position="-0.0020381442474988534m 0.028261478093206557m -0.013010092971544998m"
+            data-normal="0.25556123438252354m -0.4814262137778687m -0.8384016079233072m"
+            aria-label="Ear Apex boundary point 6">
+            <span>6</span>
+          </button>
+
+          <button
+            id="earApexBoundaryHotspot7"
+            class="locked-area-boundary is-active"
+            slot="hotspot-earApex-boundary-7"
+            data-position="-0.005570116632707345m 0.02651178326369484m -0.013392469726340783m"
+            data-normal="0.285938701621628m -0.21435676251369798m -0.9339647944540436m"
+            aria-label="Ear Apex boundary point 7">
+            <span>7</span>
+          </button>
+
+          <button
+            id="earApexBoundaryHotspot8"
+            class="locked-area-boundary is-active"
+            slot="hotspot-earApex-boundary-8"
+            data-position="-0.007931521898423863m 0.028784497282230478m -0.01208252411602087m"
+            data-normal="-0.46362762993917445m 0.8223615595005486m -0.3298043150306096m"
+            aria-label="Ear Apex boundary point 8">
+            <span>8</span>
+          </button>
+
+          <button
+            id="earApexBoundaryHotspot9"
+            class="locked-area-boundary is-active"
+            slot="hotspot-earApex-boundary-9"
+            data-position="-0.0006209288933800433m 0.03222780820534646m -0.009791553334801292m"
+            data-normal="-0.004507048555681136m 0.9746303326141287m -0.22377533658066392m"
+            aria-label="Ear Apex boundary point 9">
+            <span>9</span>
+          </button>
+
+          <button
+            id="earApexBoundaryHotspot10"
+            class="locked-area-boundary is-active"
+            slot="hotspot-earApex-boundary-10"
+            data-position="0.007342972948745179m 0.030834477787056894m -0.009641687059529266m"
+            data-normal="0.452350605308536m 0.792468672693647m -0.40911163840224657m"
+            aria-label="Ear Apex boundary point 10">
+            <span>10</span>
+          </button>
+
+          <svg id="earApexAreaOverlay" class="area-overlay" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+            <polygon id="earApexAreaPolygon" class="area-polygon" points=""></polygon>
+            <polyline id="earApexAreaOutline" class="area-outline" points=""></polyline>
+          </svg>
+
+
 
 
 
@@ -407,9 +552,9 @@
     <section class="test-grid">
       <article class="test-card">
         <p class="eyebrow">Locked 3D library</p>
-        <h2>Five points plus one refined area are now fixed</h2>
+        <h2>Six points plus two refined areas are now fixed</h2>
         <p>
-          The five locked markers stay attached to their saved 3D surface positions while you rotate and zoom the ear. Occiput is now shown with a translucent patch built from 10 approved boundary points. Tap a point or area name below to center the camera target for closer inspection.
+          The six locked markers stay attached to their saved 3D surface positions while you rotate and zoom the ear. Occiput and Ear Apex are both shown as translucent patches built from approved boundary points. Tap a point or area name below to center the camera target for closer inspection.
         </p>
         <div class="point-chip-list">
           <button class="point-chip" data-focus-point="endocrine">Endocrine</button>
@@ -417,7 +562,9 @@
           <button class="point-chip" data-focus-point="subcortex">Subcortex</button>
           <button class="point-chip" data-focus-point="thalamus">Thalamus</button>
           <button class="point-chip" data-focus-point="adrenal">Adrenal</button>
+          <button class="point-chip" data-focus-point="brain">Brain</button>
           <button class="point-chip point-chip-area" data-focus-area="occiput">Occiput area</button>
+          <button class="point-chip point-chip-area" data-focus-area="earApex">Ear Apex area</button>
         </div>
         <button id="toggleLabels" class="secondary-button label-toggle" aria-pressed="false">
           Hide point labels
@@ -426,9 +573,9 @@
 
       <article class="test-card placement-card">
         <p class="eyebrow">3D calibration tool</p>
-        <h2>Place the next point without moving the locked five</h2>
+        <h2>Place the next point without moving the locked six</h2>
         <p>
-          All five point locations remain locked. Turn on point placement mode and tap Ear 1
+          All six point locations remain locked. Turn on point placement mode and tap Ear 1
           to create a separate temporary marker for another point without altering the locked library.
         </p>
 
@@ -488,6 +635,14 @@
                 Copy Adrenal data
               </button>
             </section>
+            <section class="locked-point-row">
+              <strong>Brain</strong>
+              <div><span>Position</span><code>-0.0004555845272072312m -0.006189061561736917m -0.007451785428202469m</code></div>
+              <div><span>Normal</span><code>0.2462127670513261m 0.8359014109897481m 0.4905589714257376m</code></div>
+              <button class="text-button copy-locked-point" data-copy-point="brain">
+                Copy Brain data
+              </button>
+            </section>
 
           </div>
         </details>
@@ -496,27 +651,39 @@
 
     <section class="area-calibration-card">
       <div class="area-calibration-copy">
-        <p class="eyebrow">Locked area + calibration</p>
-        <h2>Occiput is now locked as an area</h2>
+        <p class="eyebrow">Locked areas + calibration</p>
+        <h2>Occiput and Ear Apex are now locked as areas</h2>
         <p>
-          The current locked Occiput area uses the 10 approved boundary taps you provided. You can still use area mode below if you want to refine the region again or calibrate another area later.
+          Occiput now stays visible as a clean translucent patch without boundary markers, and Ear Apex is now added as a second locked area using 10 approved boundary points. You can still use area mode below if you want to refine either region or calibrate another area later.
         </p>
         <div class="area-guidance">
-          <span>10 locked boundary points</span>
-          <span>Center anchor shown</span>
-          <span>Area remains visible while rotating</span>
+          <span>2 locked areas</span>
+          <span>Occiput markers hidden</span>
+          <span>Ear Apex patch added</span>
+          <span>Areas remain visible while rotating</span>
           <span>Recalibration mode still available</span>
         </div>
       </div>
 
       <div class="area-controls">
-        <div class="locked-area-summary">
-          <p class="eyebrow no-margin">Current locked area</p>
-          <strong>Occiput · 10 boundary points</strong>
-          <p>The approved Occiput region is now rebuilt from 10 boundary taps and displayed as a translucent surface patch.</p>
-          <button id="focusOcciputArea" class="secondary-button">Focus Occiput area</button>
-          <button id="copyLockedArea" class="text-button">Copy locked Occiput area data</button>
+        <div class="locked-area-summary-grid">
+          <div class="locked-area-summary">
+            <p class="eyebrow no-margin">Locked area 1</p>
+            <strong>Occiput · 10 boundary points</strong>
+            <p>The approved Occiput region is displayed as a translucent patch with the boundary markers now hidden.</p>
+            <button id="focusOcciputArea" class="secondary-button" data-focus-area="occiput">Focus Occiput area</button>
+            <button class="text-button copy-locked-area" data-copy-area="occiput">Copy locked Occiput area data</button>
+          </div>
+
+          <div class="locked-area-summary">
+            <p class="eyebrow no-margin">Locked area 2</p>
+            <strong>Ear Apex · 10 boundary points</strong>
+            <p>The approved Ear Apex region is displayed as a translucent patch built from your 10 mapped boundary points.</p>
+            <button id="focusEarApexArea" class="secondary-button" data-focus-area="earApex">Focus Ear Apex area</button>
+            <button class="text-button copy-locked-area" data-copy-area="earApex">Copy locked Ear Apex area data</button>
+          </div>
         </div>
+
         <div class="area-button-row">
           <button id="areaModeToggle" class="primary-button" aria-pressed="false">
             Turn on area calibration mode
@@ -536,10 +703,11 @@
 
         <div id="areaReadout" class="area-readout" hidden>
           <div id="areaPointList" class="area-point-list"></div>
-          <button id="copyArea" class="text-button">Copy Occiput area data</button>
+          <button id="copyArea" class="text-button">Copy area data</button>
         </div>
       </div>
     </section>
+
 
     <aside class="notice">
       <strong>Beta rule:</strong>
