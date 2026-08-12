@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#f8f4ef">
-  <title>Bloomé 3D Ear Beta 1B.5 — Occiput Area Locked</title>
+  <title>Bloomé 3D Ear Beta 1B.6 — Front View + Occiput Patch</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -14,15 +14,15 @@
 <body>
   <header class="topbar">
     <a class="brand" href="./">Bloomé</a>
-    <span class="beta-chip">3D Ear Beta 1B.5</span>
+    <span class="beta-chip">3D Ear Beta 1B.6</span>
   </header>
 
   <main class="shell">
     <section class="intro">
       <p class="eyebrow">Standalone 3D validation</p>
-      <h1>Five points plus the first locked area.</h1>
+      <h1>Five points plus a refined Occiput area.</h1>
       <p>
-        This beta keeps the five approved locked points on Ear 1 and now adds the first locked area: Occiput. The locked Occiput region is shown directly on the 3D ear, while both point placement mode and area calibration mode remain available for future calibration work.
+        This beta corrects the default front-facing orientation and upgrades the locked Occiput area using 10 approved boundary points. The Occiput region is now shown as a translucent highlighted patch instead of a single large dot, while point placement mode and area calibration mode both remain available for future calibration work.
       </p>
     </section>
 
@@ -32,7 +32,7 @@
           <p class="eyebrow no-margin">Approved mesh</p>
           <strong class="toolbar-title">Ear 1 only</strong>
         </div>
-        <span id="modelStatus" class="status">Loading locked point-and-area model…</span>
+        <span id="modelStatus" class="status">Loading refined point-and-area model…</span>
       </div>
 
       <div class="viewer-wrap">
@@ -46,7 +46,7 @@
           exposure="1.08"
           shadow-intensity=".7"
           shadow-softness=".8"
-          camera-orbit="0deg 75deg 105%"
+          camera-orbit="180deg 75deg 105%"
           min-camera-orbit="auto 25deg 35%"
           max-camera-orbit="auto 155deg 220%"
           min-field-of-view="18deg"
@@ -149,13 +149,12 @@
             Adrenal
           </div>
 
-
           <button
             id="occiputCenterHotspot"
             class="occiput-center-hotspot is-active"
             slot="hotspot-occiput-center"
-            data-position="0.0018973902953472828m -0.01262926626828471m -0.010344359682963027m"
-            data-normal="0.21329785792371098m 0.13558519210617168m -0.9675332963194027m"
+            data-position="0.0003029567325611977m -0.013934935061583909m -0.010940474335632047m"
+            data-normal="0.2512272499758329m 0.2136579153746888m -0.9440525218796477m"
             aria-label="Occiput area center">
             <span></span>
           </button>
@@ -164,8 +163,8 @@
             id="occiputCenterLabel"
             class="label-pill locked-label occiput-label"
             slot="hotspot-occiput-center-label"
-            data-position="0.0018973902953472828m -0.01262926626828471m -0.010344359682963027m"
-            data-normal="0.21329785792371098m 0.13558519210617168m -0.9675332963194027m">
+            data-position="0.0003029567325611977m -0.013934935061583909m -0.010940474335632047m"
+            data-normal="0.2512272499758329m 0.2136579153746888m -0.9440525218796477m">
             Occiput area
           </div>
 
@@ -173,8 +172,8 @@
             id="occiputBoundaryHotspot1"
             class="locked-area-boundary is-active"
             slot="hotspot-occiput-boundary-1"
-            data-position="0.005580083851689066m -0.009140114582105684m -0.0092023583290608m"
-            data-normal="0.45019971124962516m 0.2287415412921462m -0.8631323926710477m"
+            data-position="0.005576290003790153m -0.009274388669194633m -0.009240150074890138m"
+            data-normal="0.46375083657265465m 0.23969117441747517m -0.8529263171485181m"
             aria-label="Occiput boundary point 1">
             <span>1</span>
           </button>
@@ -183,8 +182,8 @@
             id="occiputBoundaryHotspot2"
             class="locked-area-boundary is-active"
             slot="hotspot-occiput-boundary-2"
-            data-position="0.0053748263485127595m -0.015453982899116623m -0.00933496738997372m"
-            data-normal="0.3623864002652049m 0.13970017651045677m -0.9214987561498789m"
+            data-position="0.00544646629962842m -0.012127521878494434m -0.009374218053739308m"
+            data-normal="0.3847724481180729m -0.09202628474618546m -0.9184123943441961m"
             aria-label="Occiput boundary point 2">
             <span>2</span>
           </button>
@@ -193,8 +192,8 @@
             id="occiputBoundaryHotspot3"
             class="locked-area-boundary is-active"
             slot="hotspot-occiput-boundary-3"
-            data-position="-0.007839476639670225m -0.0168302670952966m -0.013301590085479195m"
-            data-normal="-0.2738923027760284m -0.15047271366569762m -0.9499162957451176m"
+            data-position="0.00531162299097062m -0.016001813779804627m -0.009442874326679535m"
+            data-normal="0.3623864002652049m 0.13970017651045677m -0.9214987561498789m"
             aria-label="Occiput boundary point 3">
             <span>3</span>
           </button>
@@ -203,11 +202,78 @@
             id="occiputBoundaryHotspot4"
             class="locked-area-boundary is-active"
             slot="hotspot-occiput-boundary-4"
-            data-position="0.00447412762085753m -0.009092700496619938m -0.009538522927338394m"
-            data-normal="0.26651585400939254m 0.2938716110112666m -0.9179372395775688m"
+            data-position="0.002352597897507299m -0.016174451244775095m -0.010643612590001128m"
+            data-normal="0.36973885939687295m 0.36704359356654365m -0.853564394919128m"
             aria-label="Occiput boundary point 4">
             <span>4</span>
           </button>
+
+          <button
+            id="occiputBoundaryHotspot5"
+            class="locked-area-boundary is-active"
+            slot="hotspot-occiput-boundary-5"
+            data-position="-0.0016111747159879702m -0.016360029016631725m -0.012275146070442486m"
+            data-normal="0.30733707883736167m 0.41705204146749175m -0.8553429222712462m"
+            aria-label="Occiput boundary point 5">
+            <span>5</span>
+          </button>
+
+          <button
+            id="occiputBoundaryHotspot6"
+            class="locked-area-boundary is-active"
+            slot="hotspot-occiput-boundary-6"
+            data-position="-0.005817899334212322m -0.01676007714745333m -0.013445863834235086m"
+            data-normal="0.06803426851154039m 0.09873270456618165m -0.9927855716906581m"
+            aria-label="Occiput boundary point 6">
+            <span>6</span>
+          </button>
+
+          <button
+            id="occiputBoundaryHotspot7"
+            class="locked-area-boundary is-active"
+            slot="hotspot-occiput-boundary-7"
+            data-position="-0.007990620856261302m -0.01699089307216792m -0.01323968453556472m"
+            data-normal="-0.13465691680076686m -0.09099855482246565m -0.986705010516281m"
+            aria-label="Occiput boundary point 7">
+            <span>7</span>
+          </button>
+
+          <button
+            id="occiputBoundaryHotspot8"
+            class="locked-area-boundary is-active"
+            slot="hotspot-occiput-boundary-8"
+            data-position="-0.004096467067558758m -0.014059592810121148m -0.011766477756328553m"
+            data-normal="0.2672445037030841m 0.5053789880993651m -0.82047087311382m"
+            aria-label="Occiput boundary point 8">
+            <span>8</span>
+          </button>
+
+          <button
+            id="occiputBoundaryHotspot9"
+            class="locked-area-boundary is-active"
+            slot="hotspot-occiput-boundary-9"
+            data-position="-0.00037869201198125445m -0.012319607797393193m -0.010336125022802345m"
+            data-normal="0.17967210425602304m 0.17626858214311925m -0.9678054153090214m"
+            aria-label="Occiput boundary point 9">
+            <span>9</span>
+          </button>
+
+          <button
+            id="occiputBoundaryHotspot10"
+            class="locked-area-boundary is-active"
+            slot="hotspot-occiput-boundary-10"
+            data-position="0.004237444119717092m -0.00928097519980299m -0.009640591091637174m"
+            data-normal="0.15610773518588725m 0.3009941848363981m -0.9407618591916901m"
+            aria-label="Occiput boundary point 10">
+            <span>10</span>
+          </button>
+
+          <svg id="occiputAreaOverlay" class="occiput-area-overlay" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+            <polygon id="occiputAreaPolygon" class="occiput-area-polygon" points=""></polygon>
+            <polyline id="occiputAreaOutline" class="occiput-area-outline" points=""></polyline>
+          </svg>
+
+
 
           <button
             id="calibrationHotspot"
@@ -341,9 +407,9 @@
     <section class="test-grid">
       <article class="test-card">
         <p class="eyebrow">Locked 3D library</p>
-        <h2>Five points plus one area are now fixed</h2>
+        <h2>Five points plus one refined area are now fixed</h2>
         <p>
-          The five locked markers stay attached to their saved 3D surface positions while you rotate and zoom the ear. Occiput is now shown as a locked highlighted area. Tap a point or area name below to center the camera target for closer inspection.
+          The five locked markers stay attached to their saved 3D surface positions while you rotate and zoom the ear. Occiput is now shown with a translucent patch built from 10 approved boundary points. Tap a point or area name below to center the camera target for closer inspection.
         </p>
         <div class="point-chip-list">
           <button class="point-chip" data-focus-point="endocrine">Endocrine</button>
@@ -433,10 +499,10 @@
         <p class="eyebrow">Locked area + calibration</p>
         <h2>Occiput is now locked as an area</h2>
         <p>
-          The current locked Occiput area uses the four approved boundary taps you provided. You can still use area mode below if you want to refine the region or calibrate another area later.
+          The current locked Occiput area uses the 10 approved boundary taps you provided. You can still use area mode below if you want to refine the region again or calibrate another area later.
         </p>
         <div class="area-guidance">
-          <span>4 locked boundary points</span>
+          <span>10 locked boundary points</span>
           <span>Center anchor shown</span>
           <span>Area remains visible while rotating</span>
           <span>Recalibration mode still available</span>
@@ -446,10 +512,10 @@
       <div class="area-controls">
         <div class="locked-area-summary">
           <p class="eyebrow no-margin">Current locked area</p>
-          <strong>Occiput · 4 boundary points</strong>
-          <p>The boundary taps are already loaded on the ear as the approved Occiput region.</p>
+          <strong>Occiput · 10 boundary points</strong>
+          <p>The approved Occiput region is now rebuilt from 10 boundary taps and displayed as a translucent surface patch.</p>
           <button id="focusOcciputArea" class="secondary-button">Focus Occiput area</button>
-          <button id="copyLockedArea" class="text-button">Copy locked Occiput data</button>
+          <button id="copyLockedArea" class="text-button">Copy locked Occiput area data</button>
         </div>
         <div class="area-button-row">
           <button id="areaModeToggle" class="primary-button" aria-pressed="false">

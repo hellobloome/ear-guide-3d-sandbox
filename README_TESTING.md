@@ -41,3 +41,10 @@ Bloomé Guide Package 31.2 remains untouched.
 - Use **Focus Occiput area** to jump the camera closer to that region.
 - Use **Copy locked Occiput data** if you want to review the approved area coordinates.
 - Area calibration mode is still empty by default and can be reused for future area tracing.
+
+
+## Beta 1B.6 update
+- Front view is corrected and should no longer open on the back of the ear.
+- Occiput is now loaded from 10 approved boundary points.
+- The locked Occiput region is shown as a translucent patch with a dashed outline.
+- Boundary markers remain visible for checking the shape.
