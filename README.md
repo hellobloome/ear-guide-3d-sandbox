@@ -1,6 +1,8 @@
-# Bloomé 3D Ear — Beta 2A
+# Bloomé 3D Ear — Beta 2A.1
 
 Customer-facing mobile-first viewer built from the frozen Beta 1B.10 baseline.
+
+Beta 2A.1 corrects the selector arrow encoding issue, retains the approved Brain presentation, and adds small accessibility and loading-fallback improvements.
 
 ## Use
 
@@ -24,6 +26,6 @@ The ear geometry was not altered for Beta 2A. Model credit and licence details a
 
 ## GitHub Desktop
 
-Summary: `Beta 2A - Build Clean Customer 3D Ear Viewer`
+Summary: `Beta 2A.1 - Fix Selector And Refine Customer Viewer`
 
-Description: `Built a mobile-first Bloomé customer 3D viewer from the frozen 1B.10 Ear 1 coordinate baseline, removed calibration controls, added single-location selection and guided camera focus, preserved Occiput and Ear Apex as translucent areas, and introduced softer editorial styling without changing geometry.`
+Description: `Fixed the corrupted selector arrow, retained the approved Brain marker presentation, added keyboard-focus and model-loading fallback improvements, and preserved the frozen 1B.10 coordinates and Ear 1 geometry exactly.`

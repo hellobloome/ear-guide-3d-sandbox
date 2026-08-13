@@ -1,5 +1,13 @@
 # Changelog
 
+## Beta 2A.1
+
+- Replaced the corrupted dropdown glyph with a character-safe CSS arrow.
+- Kept the Brain marker presentation unchanged as approved.
+- Added clearer keyboard focus indicators.
+- Added a customer-friendly message if the 3D model cannot load.
+- Preserved the frozen Beta 1B.10 coordinate library and Ear 1 geometry exactly.
+
 ## Beta 2A
 
 - Froze Beta 1B.10 as the coordinate source of truth.
