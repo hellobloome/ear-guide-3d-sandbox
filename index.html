@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#f8f4ef">
-  <title>Bloomé 3D Ear Beta 1B.9 — Point Visibility + Ear Apex 20-Point Update</title>
+  <title>Bloomé 3D Ear Beta 1B.10 — Shoulder + Cervical Spine Lock</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -14,7 +14,7 @@
 <body>
   <header class="topbar">
     <a class="brand" href="./">Bloomé</a>
-    <span class="beta-chip">3D Ear Beta 1B.9</span>
+    <span class="beta-chip">3D Ear Beta 1B.10</span>
   </header>
 
   <main class="shell">
@@ -22,7 +22,7 @@
       <p class="eyebrow">Standalone 3D validation</p>
       <h1>Six points plus two refined areas.</h1>
       <p>
-        This beta keeps the corrected front-facing orientation, removes the Occiput boundary markers, adds Point Zero and Mouth as locked points, and increases the area calibration tool to support up to 20 boundary points for more precise area highlighting. Both locked areas remain visible as translucent highlighted patches while point placement mode and area calibration mode remain available for future calibration work.
+        This beta locks Shoulder and Cervical Spine as the final two points in the current 3D mapping round. The corrected front-facing orientation remains the default, Point Zero and Mouth stay visible, and the area calibration tool still supports up to 20 boundary points. Occiput and Ear Apex remain visible as translucent highlighted patches.
       </p>
     </section>
 
@@ -39,7 +39,7 @@
         <model-viewer
           id="earViewer"
           src="./models/ear-1.glb"
-          alt="Interactive 3D model of the external ear showing eight locked Bloomé beta points and the locked Occiput and Ear Apex areas"
+          alt="Interactive 3D model of the external ear showing ten locked Bloomé beta points and the locked Occiput and Ear Apex areas"
           camera-controls
           touch-action="pan-y"
           tone-mapping="neutral"
@@ -203,6 +203,44 @@
             data-position="0.0056609512248223665m -0.0023364361927256175m 0.002496305804476434m"
             data-normal="0.5430653084929933m -0.6719043572210315m -0.503611562078158m">
             Mouth
+          </div>
+
+          <button
+            id="shoulderHotspot"
+            class="hotspot locked-hotspot is-active"
+            slot="hotspot-shoulder"
+            data-position="-0.010573334895546072m -0.0009819956480925582m -0.01069117960875604m"
+            data-normal="-0.3881979828783163m -0.17344192679259207m -0.905107852203084m"
+            aria-label="Shoulder point marker">
+            <span></span>
+          </button>
+
+          <div
+            id="shoulderLabel"
+            class="label-pill locked-label"
+            slot="hotspot-shoulder-label"
+            data-position="-0.010573334895546072m -0.0009819956480925582m -0.01069117960875604m"
+            data-normal="-0.3881979828783163m -0.17344192679259207m -0.905107852203084m">
+            Shoulder
+          </div>
+
+          <button
+            id="cervicalSpineHotspot"
+            class="hotspot locked-hotspot is-active"
+            slot="hotspot-cervicalSpine"
+            data-position="-0.003190768778874725m -0.00403722094705174m -0.011244930038756817m"
+            data-normal="0.5829595229495638m 0.2585159823637826m -0.7702776651733488m"
+            aria-label="Cervical Spine point marker">
+            <span></span>
+          </button>
+
+          <div
+            id="cervicalSpineLabel"
+            class="label-pill locked-label"
+            slot="hotspot-cervicalSpine-label"
+            data-position="-0.003190768778874725m -0.00403722094705174m -0.011244930038756817m"
+            data-normal="0.5829595229495638m 0.2585159823637826m -0.7702776651733488m">
+            Cervical Spine
           </div>
 
           <button
@@ -791,9 +829,9 @@
     <section class="test-grid">
       <article class="test-card">
         <p class="eyebrow">Locked 3D library</p>
-        <h2>Eight points plus two refined areas are now fixed</h2>
+        <h2>Ten points plus two refined areas are now fixed</h2>
         <p>
-          The eight locked markers stay attached to their saved 3D surface positions while you rotate and zoom the ear. Occiput and Ear Apex are both shown as translucent patches built from approved boundary points. Tap a point or area name below to center the camera target for closer inspection.
+          The ten locked markers stay attached to their saved 3D surface positions while you rotate and zoom the ear. Occiput and Ear Apex are both shown as translucent patches built from approved boundary points. Tap a point or area name below to center the camera target for closer inspection.
         </p>
         <div class="point-chip-list">
           <button class="point-chip" data-focus-point="endocrine">Endocrine</button>
@@ -804,6 +842,8 @@
           <button class="point-chip" data-focus-point="brain">Brain</button>
           <button class="point-chip" data-focus-point="pointZero">Point Zero</button>
           <button class="point-chip" data-focus-point="mouth">Mouth</button>
+          <button class="point-chip" data-focus-point="shoulder">Shoulder</button>
+          <button class="point-chip" data-focus-point="cervicalSpine">Cervical Spine</button>
           <button class="point-chip point-chip-area" data-focus-area="occiput">Occiput area</button>
           <button class="point-chip point-chip-area" data-focus-area="earApex">Ear Apex area</button>
         </div>
@@ -814,9 +854,9 @@
 
       <article class="test-card placement-card">
         <p class="eyebrow">3D calibration tool</p>
-        <h2>Place the next point without moving the locked eight</h2>
+        <h2>Place the next point without moving the locked ten</h2>
         <p>
-          All eight point locations remain locked. Turn on point placement mode and tap Ear 1
+          All ten point locations remain locked. Turn on point placement mode and tap Ear 1
           to create a separate temporary marker for another point without altering the locked library.
         </p>
 
@@ -898,6 +938,22 @@
               <div><span>Normal</span><code>0.5430653084929933m -0.6719043572210315m -0.503611562078158m</code></div>
               <button class="text-button copy-locked-point" data-copy-point="mouth">
                 Copy Mouth data
+              </button>
+            </section>
+            <section class="locked-point-row">
+              <strong>Shoulder</strong>
+              <div><span>Position</span><code>-0.010573334895546072m -0.0009819956480925582m -0.01069117960875604m</code></div>
+              <div><span>Normal</span><code>-0.3881979828783163m -0.17344192679259207m -0.905107852203084m</code></div>
+              <button class="text-button copy-locked-point" data-copy-point="shoulder">
+                Copy Shoulder data
+              </button>
+            </section>
+            <section class="locked-point-row">
+              <strong>Cervical Spine</strong>
+              <div><span>Position</span><code>-0.003190768778874725m -0.00403722094705174m -0.011244930038756817m</code></div>
+              <div><span>Normal</span><code>0.5829595229495638m 0.2585159823637826m -0.7702776651733488m</code></div>
+              <button class="text-button copy-locked-point" data-copy-point="cervicalSpine">
+                Copy Cervical Spine data
               </button>
             </section>
 

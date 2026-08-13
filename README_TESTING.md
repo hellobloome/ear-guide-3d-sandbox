@@ -61,3 +61,15 @@ Bloomé Guide Package 31.2 remains untouched.
 - Area calibration mode now supports up to 20 boundary points.
 - Point Zero and Mouth are now loaded as locked points.
 - Occiput and Ear Apex remain locked translucent area patches.
+
+
+## Beta 1B.9 update
+- Point Zero and Mouth now include visible on-model hotspots and labels.
+- Ear Apex locked area now uses the approved 20-boundary-point shape.
+- Area calibration mode still supports up to 20 points.
+
+
+## Beta 1B.10 update
+- Shoulder and Cervical Spine are now locked as 3D points.
+- The current mapping round now contains 10 locked points and 2 locked areas.
+- This is the recommended coordinate-freeze candidate before moving into the clean customer 3D viewer phase.

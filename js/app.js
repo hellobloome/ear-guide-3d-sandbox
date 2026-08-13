@@ -69,6 +69,18 @@ const lockedPoints = {
     "name": "Mouth",
     "position": "0.0056609512248223665m -0.0023364361927256175m 0.002496305804476434m",
     "normal": "0.5430653084929933m -0.6719043572210315m -0.503611562078158m"
+  },
+  "shoulder": {
+    "id": "shoulder",
+    "name": "Shoulder",
+    "position": "-0.010573334895546072m -0.0009819956480925582m -0.01069117960875604m",
+    "normal": "-0.3881979828783163m -0.17344192679259207m -0.905107852203084m"
+  },
+  "cervicalSpine": {
+    "id": "cervicalSpine",
+    "name": "Cervical Spine",
+    "position": "-0.003190768778874725m -0.00403722094705174m -0.011244930038756817m",
+    "normal": "0.5829595229495638m 0.2585159823637826m -0.7702776651733488m"
   }
 };
 const lockedAreas = {
@@ -334,7 +346,7 @@ function requestAreaOverlayUpdate() {
 }
 
 viewer.addEventListener("load", () => {
-  modelStatus.textContent = "Ear 1 ready · front view fixed · 8 locked points + 2 locked areas";
+  modelStatus.textContent = "Ear 1 ready · front view fixed · 10 locked points + 2 locked areas";
   Object.values(lockedPoints).forEach((point) => {
     viewer.updateHotspot({ name: `hotspot-${point.id}`, position: point.position, normal: point.normal });
     viewer.updateHotspot({ name: `hotspot-${point.id}-label`, position: point.position, normal: point.normal });
