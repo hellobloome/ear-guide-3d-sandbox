@@ -13,7 +13,7 @@
   <link rel="stylesheet" href="./css/beta-2a1.css">
   <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.3.1/model-viewer.min.js"></script>
 </head>
-<body>
+<body class="is-loading">
   <header><a class="brand" href="./" aria-label="Bloomé home">Bloomé</a><span>3D ear guide</span></header>
   <main>
     <section class="copy">
@@ -23,6 +23,7 @@
     </section>
     <section class="viewer-card" aria-label="Interactive 3D ear viewer">
       <div class="stage">
+        <div id="loadingMessage" class="loading-message" role="status"><span></span>Preparing the 3D ear…</div>
         <model-viewer id="viewer" src="./models/ear-1.glb" alt="Interactive anatomical model of a right external ear" camera-controls touch-action="pan-y" tone-mapping="aces" exposure="1.18" shadow-intensity="0.9" shadow-softness="0.92" camera-orbit="180deg 75deg 105%" min-camera-orbit="auto 25deg 40%" max-camera-orbit="auto 155deg 220%" field-of-view="30deg" min-field-of-view="17deg" max-field-of-view="48deg" interaction-prompt="auto">
           <div class="progress" slot="progress-bar"><i></i></div>
           <button class="hotspot" slot="hotspot-selected" data-position="0.009773924042668837m -0.014079374316460704m -0.0018216833743757571m" data-normal="0.47519742534282616m 0.7657524390068502m -0.43337121397551237m" aria-label="Selected point"><span></span></button>
@@ -39,13 +40,13 @@
       <div class="panel">
         <label for="location">Show a point or area</label>
         <div class="select-wrap"><select id="location"></select></div>
-        <div class="selection"><span id="type">Point</span><h2 id="name">Endocrine</h2><p id="guidance">The selected location is highlighted in Bloomé burgundy.</p></div>
+        <div class="selection" aria-live="polite"><span id="type">Point</span><h2 id="name">Endocrine</h2><p id="guidance">The selected location is highlighted in Bloomé burgundy.</p></div>
         <div class="controls"><button id="focus" type="button">Focus location</button><button id="front" type="button">Front view</button></div>
       </div>
     </section>
     <p class="note">This visual guide is for orientation only and is not medical advice.</p>
   </main>
-  <footer><span>Bloomé Beta 2A.1</span><a href="./ATTRIBUTION.md">3D model attribution</a></footer>
+  <footer><span>Bloomé 3D Ear Guide</span><a href="./ATTRIBUTION.md">3D model attribution</a></footer>
   <script src="./js/app.js"></script>
 </body>
 </html>

@@ -1,5 +1,14 @@
 # Changelog
 
+## Beta 2B
+
+- Promoted the approved responsive viewer to a production-ready standalone build.
+- Added a polished loading state and retained the customer-friendly failure fallback.
+- Added direct location links using `?location=` for future View in 3D integration.
+- Kept the selected location reflected in the page URL without reloading.
+- Removed customer-facing beta language from the interface.
+- Preserved all Beta 1B.10 coordinates, Ear 1 geometry, and the approved Brain appearance.
+
 ## Beta 2A.1
 
 - Replaced the corrupted dropdown glyph with a character-safe CSS arrow.

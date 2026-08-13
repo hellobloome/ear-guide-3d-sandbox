@@ -1,8 +1,20 @@
-# Bloomé 3D Ear — Beta 2A.1
+# Bloomé 3D Ear — Beta 2B
 
 Customer-facing mobile-first viewer built from the frozen Beta 1B.10 baseline.
 
-Beta 2A.1 corrects the selector arrow encoding issue, retains the approved Brain presentation, and adds small accessibility and loading-fallback improvements.
+Beta 2B is the production-ready standalone viewer. It retains the approved presentation and adds direct location links for the next integration phase.
+
+## Direct links
+
+Append a location ID to open the viewer with that point or area selected:
+
+- `?location=endocrine`
+- `?location=pointZero`
+- `?location=cervicalSpine`
+- `?location=occiput`
+- `?location=earApex`
+
+The remaining IDs are `sympathetic`, `subcortex`, `thalamus`, `adrenal`, `brain`, `mouth`, and `shoulder`.
 
 ## Use
 
@@ -26,6 +38,6 @@ The ear geometry was not altered for Beta 2A. Model credit and licence details a
 
 ## GitHub Desktop
 
-Summary: `Beta 2A.1 - Fix Selector And Refine Customer Viewer`
+Summary: `Beta 2B - Finalize Production 3D Ear Viewer`
 
-Description: `Fixed the corrupted selector arrow, retained the approved Brain marker presentation, added keyboard-focus and model-loading fallback improvements, and preserved the frozen 1B.10 coordinates and Ear 1 geometry exactly.`
+Description: `Finalized the responsive Bloomé 3D Ear Viewer with polished loading and fallback states, direct point and area links for future View in 3D integration, production-facing copy, and the unchanged frozen 1B.10 coordinates and Ear 1 geometry.`

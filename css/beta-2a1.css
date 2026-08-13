@@ -32,3 +32,37 @@ a:focus-visible {
   line-height: 1.55;
   box-shadow: 0 16px 36px rgba(82, 46, 53, .12);
 }
+
+.loading-message {
+  position: absolute;
+  z-index: 3;
+  left: 50%;
+  top: 50%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transform: translate(-50%, -50%);
+  padding: 11px 15px;
+  border-radius: 999px;
+  background: rgba(255, 250, 247, .9);
+  color: #725e65;
+  font-size: .74rem;
+  box-shadow: 0 12px 30px rgba(82, 46, 53, .11);
+}
+
+.loading-message span {
+  width: 12px;
+  height: 12px;
+  border: 2px solid #ddc3c2;
+  border-top-color: var(--wine);
+  border-radius: 50%;
+  animation: loading-spin .85s linear infinite;
+}
+
+body:not(.is-loading) .loading-message { display: none; }
+
+@keyframes loading-spin { to { transform: rotate(360deg); } }
+
+@media (prefers-reduced-motion: reduce) {
+  .loading-message span { animation: none; }
+}
